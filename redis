@@ -1,0 +1,14 @@
+Installing Redis on computer
+==================================================
+git clone http://github.com/antirez/redis.git
+cd redis/src
+ make
+sudo make install
+cd ../..
+rm -rf redis
+
+command to run server : redis-server
+
+command to run client : redis-cli
+
+

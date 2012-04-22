@@ -1,0 +1,8 @@
+Install Node JS
+==================================================
+install nvm
+edit .bashrc - put version of nodejs to use in here
+configure terminal to run bash
+nvm install version of nodejs
+
+

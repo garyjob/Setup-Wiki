@@ -1,0 +1,8 @@
+To start process
+sudo httpd
+
+To kill process
+ps aux | grep httpd
+
+sudo kill -9 pid
+

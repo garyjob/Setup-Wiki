@@ -1,0 +1,20 @@
+Using mVim
+=================================================
+finding files by file name:
+Command + T and then type name
+
+finding keywords in files 
+Command + Shift + f and then type term
+
+Naivgating between windows
+Ctrl + ww
+
+Closing a window
+:q!
+
+To go into escape mode 
+Ctrl + c
+
+Ctrl == Caps Lock Key
+
+

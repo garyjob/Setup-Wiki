@@ -1,0 +1,14 @@
+SSL certificates
+==================================================
+Create CSR file with the following command
+    openssl req -out disconnect.csr -new -newkey rsa:2048 -nodes -keyout disconnect.key
+Copy and paste contents of CSR file to goDaddy field in the SSL creation page
+Add additional domains to SSL a.k.a new Subject Alternative Names, if required 
+Approve request in your email account
+download package from goDaddy
+create combined certificate : 
+    cat disconnect.me.crt gd_bundle.crt > disconnect_combined.crt
+upload disconnect.key and disconnect_combined.crt to server locations
+    scp -P 2202 file_name prod@disconnect.me:/etc/ssl/certs/
+    scp file_name disconnect@forum.disconnect.me:~/ssl_certs/
+restart Nginx and Apache servers
