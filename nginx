@@ -6,4 +6,8 @@ Use homebrew to install Nginx
 Download SSL certificates
 Configure nginx server instance to use SSL certificate
 
+Current NGINX application location
+/usr/local/etc/nginx
 
+To start Nginx application
+sudo nginx

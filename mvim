@@ -17,4 +17,13 @@ Ctrl + c
 
 Ctrl == Caps Lock Key
 
+Visual copy and then 
+SHIFT + > to go forward
+SHIFT + < to go backward
 
+CTRL + U to page up
+CTRL + D to page down
+:vsp to do vertical split
+:sp to do horizontal split
+
+:e filename to open file
