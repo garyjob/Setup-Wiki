@@ -1,0 +1,13 @@
+To see the status of the rewriters, go to
+  https://proxy.disconnect.me/haproxy?stats
+
+User name and password is 
+  myuser:mypass
+
+It is written in the haproxy config file
+
+To restart haproxy
+  kill instance, ps aux | grep haproxy
+
+To start haproxy
+  haproxy -f /etc/haproxy/haproxy.cfg 

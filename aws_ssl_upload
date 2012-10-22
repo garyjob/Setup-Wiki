@@ -1,0 +1,22 @@
+Reference URL : http://blog.teamextension.com/aws-elastic-beanstalk-with-godaddy-ssl-803
+=========================================== Uploading of certificate ============================
+generate decrypted key [decrypted-disconnect.key]
+  openssl rsa -in disconnect.key -out decrypted-disconnect.key
+
+Sample
+  ./iam-servercertupload -b public_key_certificate_file  -c certificate_chain_file -k privatekey.pem -s certificate_object_name
+
+Mapping
+  -b disconnect.crt
+  -c DigiCertCA.crt
+  -k decrypted-disconnect.key //generated using 
+  -s disconnect_combined.crt
+
+Actual command 
+  /Users/garyjob/Applications/aws-iam-cli/bin/iam-servercertupload -b disconnect.crt  -c DigiCertCA.crt -k decrypted-disconnect.key -s disconnect_combined.crt
+
+Get SSL certificate ID 
+  /Users/garyjob/Applications/aws-iam-cli/bin/iam-servercertgetattributes -s disconnect_combined.crt
+    output 
+      arn:aws:iam::835684402091:server-certificate/disconnect_combined.crt
+      ASCAJPQHN2D7ZC67BCJUQ

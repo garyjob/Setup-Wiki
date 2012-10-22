@@ -1,0 +1,7 @@
+Setup an SSL tunnel
+  ssh -D 9999 dashboard -N
+    local port is 9999
+    -N means not to log in 
+
+Setup SOCKS proxy 
+  point to 9999 on localhost

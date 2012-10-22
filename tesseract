@@ -1,0 +1,10 @@
+Installation on Mac OS
+  brew install tesseract
+
+Location of home brew locally 
+  /usr/local/Cellar/tesseract/3.01
+
+The easiest way to use it is to convert the source to a Grayscale tiff:
+  `convert source.png -type Grayscale terre_input.tif`
+then run tesseract:
+  `tesseract terre_input.tif output`

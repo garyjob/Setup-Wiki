@@ -1,0 +1,7 @@
+Then install ghostscript
+Install Freetype
+
+Installation instructions : http://www.imagemagick.org/script/install-source.php
+
+idenfity image.jpg
+convert a.jpg -fill yellow -draw 'rectangle 10, 10, 100, 100' x.jpg

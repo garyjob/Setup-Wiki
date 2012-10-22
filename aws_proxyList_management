@@ -1,0 +1,15 @@
+This document states how the proxyList is maintained for Disconnect Inc
+=========================================================================
+
+Proxy list is maintained on redis server residing at location:
+  dashboard.disconnect.me
+
+Maintaining proxyList:
+  1. ssh into dashboard.disconnect.me
+  2. start redis server
+  3. lrange 0 3 proxyList ---> this will show the proxy EC2 instances that will be kept alive
+  4. ltrim 0 3 proxyList ---> this will only keep the above entries in the redis server and clear the rest
+  5. publish proxyListEvent 'maintenance' ---> this will tell all servers to update their proxy server list.
+
+Log into console.aws.amazon.com
+  1. clear all instances with AMI ID ami-22af0e4b not on the redis server list

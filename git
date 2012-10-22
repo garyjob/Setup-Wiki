@@ -1,0 +1,12 @@
+Setup a repository
+  cd ~/
+  mkdir repository_name.git
+  git init --bare
+
+link to a local git repository
+  git init
+  git remote add origin ~/seo_potato.git
+
+link to a remote repository
+  git init
+  git remote add origin ubuntu@ec2-204-236-242-99.compute-1.amazonaws.com:seo_potato.git

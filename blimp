@@ -1,0 +1,38 @@
+MixPanel events
+==================================================================================
+beta page proxy
+     When a html page is proxied
+       attributes : url of page
+
+beta search
+     When a search event happens
+       attributes : keyword , search engine
+
+beta search page access
+    The search landing page
+
+beta page no access
+    The page where you put in your email address to go into queuing
+
+beta page email submit
+    When user gives email to request access
+
+beta activation via email 
+    When user got cookie for access
+    attribute : token
+    cookie is laid for 90 days
+
+Deploying on instances
+=================================================================================
+Create public and private key pair
+ssh-keygen -t rsa
+
+Move the files to ~/.ssh/
+
+Setup RSA access to remote instances
+Copy and paste contents of id_rsa.pub to ~/.ssh/authorized_keys
+
+Setup access in ~/.ssh/config for rewriters [ rewrite1 , rewrite2 , rewrite3 ]
+
+Do a GIT PULL and then Run script at location 
+~/blimp/blimply/remote_deploy.sh

@@ -1,0 +1,13 @@
+Reference 
+  http://docs.amazonwebservices.com/elasticbeanstalk/latest/dg/create_deploy_PHP.sdlc.html#create_deploy_PHP.sdlc.deploy
+
+=========================  Setting up git to connect to aws EBS =========================
+Run this script from repository
+  /Users/garyjob/Applications/aws-ebs-cli/AWSDevTools/Linux/AWSDevTools-RepositorySetup.sh
+
+Configure the AWS git amazon connection
+  git aws.config
+
+Amazon git push
+  git aws.push
+

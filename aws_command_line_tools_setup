@@ -1,0 +1,28 @@
+Setup credentials - so that libraries can fetch and use the proper credentials for access AWS
+====================================================================================================
+  export AWS_CREDENTIAL_FILE=/Users/garyjob/Applications/aws-iam-cli/aws-credential.template
+  export CLIENT_CONFIG_FILE=/Users/garyjob/Applications/aws-iam-cli/client-config.template
+
+  Contents of aws-credentials.template 
+  ------------------------------------------------------------------------
+
+    # Enter the AWS Keys without the < or >
+    # You can either use the AWS Accounts access keys and they can be found at 
+    # http://aws.amazon.com under Account->Security Credentials
+    # or you can use the access keys of a user created with IAM
+    AWSAccessKeyId=AKIAJUY7RG7SZNNQMDBA
+    AWSSecretKey=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
+
+   -----------------------------------------------------------------------
+
+Setup paths to aws libraries
+================================
+  export AWS_IAM_HOME=/Users/garyjob/Applications/aws-iam-cli/
+  export PATH=$PATH:$AWS_IAM_HOME
+
+  export AWS_ELB_HOME=/Users/garyjob/Applications/aws-elb
+  export PATH=$PATH:$AWS_ELB_HOME/bin
+
+  export AWS_AUTO_SCALING_HOME=/Users/garyjob/Applications/aws-autoscale
+  export PATH=$PATH:$AWS_AUTO_SCALING_HOME/bin
+

@@ -1,0 +1,7 @@
+Production Standard Operating Procedure:
+================================================
+
+After deploying NodeJs instance do
+  tail -f log_file_location
+
+Monitor access.log files for Forever and periodically clear it

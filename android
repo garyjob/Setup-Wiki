@@ -1,0 +1,101 @@
+To run debug mode and output into Terminal console, run the following command
+  adb logcat
+
+Location of adb on this current system is at 
+  ~/Applications/android_sdk/platform-tools/
+
+To filter output based on tag, e.g. AdBlock.Proxy tag shows only thus
+:S to silence others
+  adb logcat AdBlock.Proxy:D BLAH:D *:S
+
+Testing socket server remotely
+  echo "bmv" | nc 192.168.1.105 5000
+
+Removing package
+  adb uninstall package.name
+
+==========================Running android as root in emulator======================================
+Run instance of android 
+  emulator -avd EmulatorName -partition-size 128 -no-snapshot-load
+
+Remount /system
+  adb shell mount -o rw,remount -t yaffs2 /dev/block/mtdblock0 /system
+
+Pushing the su package to /system - su is in current folder
+  adb push su /system/xbin/
+  adb shell chmod 06755 /system/xbin/su
+
+Pushing the busybox package to /system - busybox is in current folder
+  Download from http://benno.id.au/android/busybox
+  adb push busybox /data/local/busybox
+  adb shell
+  su
+  cd /data/local
+  chmod 755 busybox
+  ./busybox
+  mount -o remount,rw -t yaffs2 /dev/block/mtdblock0 /system 
+  mkdir /system/xbin
+  /data/local/busybox cp /data/local/busybox /system/xbin
+  /data/local/busybox cp /data/local/busybox /system/bin
+  cd /system/xbin
+  busybox --install .
+  mount -o ro,remount -t yaffs2 /dev/block/mtdblock0 /system
+  sync
+  reboot
+Installing the Superuser.apk - Superuser.apk is in current folder
+  adb install Superuser.apk
+
+=========================Readings for Andriod APN and Wifi APIs=====================================
+http://blogs.msdn.com/b/zhengpei/archive/2009/10/13/managing-apn-data-in-google-android.aspx
+
+http://stackoverflow.com/questions/4374862/how-to-programatically-create-and-read-wep-eap-wifi-configurations-in-android
+
+https://play.google.com/store/apps/details?id=com.riteshsahu.APNBackupRestore&hl=en
+
+https://code.google.com/p/apndroid/wiki/API
+
+========================Extracting list of Android Certificate Authorities=========================
+Use library installed at location /Library/Java/Home/lib/ 
+  bcprov-jdk16-141.jar
+
+In .bashrc add the following if not already added
+  export JAVA_HOME=/Library/Java/Home/
+  export PATH=$JAVA_HOME/bin:$PATH
+
+Extract CA records file
+  adb pull /system/etc/security/cacerts.bks cacerts.bks
+
+Run command in location with cacerts.bk stored 
+  keytool -keystore cacerts.bks -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -storepass changeit -list -v >> certificates.txt
+
+
+=======================Booting into download mode for Samsung Captivate =====================================
+1. Remove the battery, external SD card and SIM card.
+2. Wait 10 seconds.
+3. Open odin3
+4. Connect usb cable.
+5. Hold volume up + volume down + Power.
+6. Insert battery.
+7. Release POWER BUTTON ONLY. 
+
+====================== Booting into download mode for Samsung Galaxy Tab 1.0 =================================
+ClockWorkRecovery mode to use
+    CWM 5.5.0.4
+    http://droidbasement.com/galaxy/recovery/cwm5/p4/3/recovery.tar.md5
+
+1. Boot into ClockWorkRecovery mod
+     fastboot boot recovery-cwm_3.2.0.1-sam-tab-10.1.img 
+
+2. Cyanogenmod to use
+   http://droidbasement.com/galaxy/roms/cm9/p3/cm-9-20120711-EXPERIMENTAL-p3.zip
+
+================================ Commands ===================================
+shows function sitting at port 5000
+  lsof -i :5000
+
+see what is the user id of the current process
+  id
+
+pretend to be a user
+  su app_id 
+

@@ -1,0 +1,14 @@
+Getting launchctl instructions for applications by brew
+  brew info mongod
+
+Copy application plist to daemon - instruction is usually available in brew info
+   cp /usr/local/Cellar/mongodb/2.0.6-x86_64/homebrew.mxcl.mongodb.plist ~/Library/LaunchAgents/
+
+Launch application
+  launchctl load -w homebrew.mxcl.mongodb.plist 
+
+Relaunch application
+  launchctl unload -w homebrew.mxcl.mongodb.plist 
+  launchctl load -w homebrew.mxcl.mongodb.plist 
+
+

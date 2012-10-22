@@ -1,0 +1,10 @@
+Install pyopengl
+===========================
+Download package from http://pypi.python.org/pypi/PyOpenGL/3.0.2a5
+Run python setup.py install
+
+Install pygame
+  http://www.pygame.org/ftp/pygame-1.9.2pre-py2.6-macosx10.6.mpkg.zip
+
+Install NLTK
+  http://nltk.org/install.html

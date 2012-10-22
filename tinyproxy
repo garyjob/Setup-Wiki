@@ -1,0 +1,4 @@
+sudo apt-get install tinyproxy
+sudo vim /etc/tinyproxy.conf
+change the allow access to 10.0.0.0/8
+sudo /etc/init.d/tinyproxy restart 

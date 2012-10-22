@@ -1,0 +1,7 @@
+Install subversion
+=====================
+  sudo port install subversion
+
+Checkout codes
+=====================
+  svn checkout http://android-proxy-library.googlecode.com/svn/trunk/ android-proxy-library-read-only

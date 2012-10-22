@@ -1,0 +1,24 @@
+To export data:
+  mongoexport -d Database -c Collection -o Output file
+
+To import data:
+  mongoimport -d Database -c Collection [Input file]
+
+Shutdown server
+  use admin
+  db.shutdownServer()
+
+Manipulate database
+  use test
+  db.records.find();
+  db.records.drop();
+
+Remote login
+  mongo ec2-184-73-55-14.compute-1.amazonaws.com:27017/test
+
+Remote authenticaion
+  use database
+  db.auth('userid','password');
+
+Get output from Mongodb
+  db.logentries.find({},{details:1, date:1}).sort({date:-1}).limit(10)

@@ -1,0 +1,19 @@
+Linode types
+  10.04 LTE 64bits Ubuntu
+
+Creating user 
+  sudo adduser bar
+
+Add user to sudo 
+  visudo
+  prod    ALL=(ALL) ALL
+
+Change port of ssh
+  /etc/ssh/sshd_config 
+   Port 2202 
+
+Disable root password
+   sudo passwd -l root
+  
+Set authorized keys
+   scp authorized_keys DRedis:~/.ssh/authorized_keys

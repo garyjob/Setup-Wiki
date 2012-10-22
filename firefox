@@ -1,0 +1,9 @@
+Setting up profile manager
+=======================================
+/Applications/Firefox.app/Contents/MacOS/firefox-bin -profilemanager
+
+Creating flag file
+======================================
+create file in <profile>/extensions/facebook@disconnect.me
+  put content
+    /Users/garyjob/Applications/fbdc/firefox/

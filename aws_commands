@@ -1,0 +1,13 @@
+Command line references
+============================
+http://docs.amazonwebservices.com/AWSEC2/2012-05-01/CommandLineReference/Welcome.html?r=1315
+
+Creating a new instance using the testing_server certificate with tinyproxy already installed and running
+=============================
+ec2-run-instances ami-c4db7aad -k testing_server -g fetcher -t t1.micro
+
+Killing an instance by providing the instance id
+============================
+ec2-terminate-instances i-832835e5
+
+
