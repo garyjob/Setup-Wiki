@@ -1,1 +1,24 @@
 ssh username@server.address.com
+
+To enable bash by default when ssh login 
+sudo vim /etc/passwd
+change 
+    prod:x:1000:1000::/home/disconnect:/bin/sh
+
+to
+    prod:x:1000:1000::/home/disconnect:/bin/bash
+
+Disable password login to Ubuntu Instances
+==============================================
+change file
+  sudo vim /etc/ssh/sshd_config
+  PasswordAuthentication = no
+
+sudo /etc/init.d/ssh restart
+
+SSH directly into bash
+==============================================
+in .bash_profile add lines
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi

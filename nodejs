@@ -1,8 +1,55 @@
-Install Node JS
 ==================================================
 install nvm
 edit .bashrc - put version of nodejs to use in here
 configure terminal to run bash
 nvm install version of nodejs
+Install Node JS
 
+============== Organization wide upgrade of NodeJs Version ====================
 
+1. Declaration of nodejs version to use
+
+2. All engineers to upgrade version of NodeJs upon receipt of notice
+    
+    - update python to version 2.7
+
+    - nvm install version
+
+    - update ~/.bashrc to use new version of NodeJs
+
+3. All engineers to update global instances of npm packages on their computer
+
+    - npm install package-name -g
+    
+      - forever
+      - supervisor
+
+4. Production migration process
+
+    - test instances of NodeJs based system on new version of NodeJs locally
+
+    - nvm install new version of NodeJs
+
+    - nvm use <<new version of node>>
+
+    - npm install all global packages
+
+    - nvm use <<current version of node>>
+
+    - stop all forever threads
+
+    - nvm use <<new version of node>>
+
+    - remove node_modules
+
+    - npm install
+
+    - run node application -> node app.js
+
+    - test to make sure there are no errors
+
+    - stop node application
+
+    - forever start app.js
+
+    - monitor log for 48 hours to ensure system stability

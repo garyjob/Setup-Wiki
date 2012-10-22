@@ -11,3 +11,11 @@ Current NGINX application location
 
 To start Nginx application
 sudo nginx
+
+To see access details
+=================================================
+tail -f /var/log/nginx/access.log
+
+To manage local instance on MacOs
+=================================================
+sudo nginx -s reload | stop | quit | reopen

@@ -6,3 +6,14 @@ ps aux | grep httpd
 
 sudo kill -9 pid
 
+Location of local Apache Server
+  /etc/apache2
+
+Adding new sites to local Apache Server
+=======================================
+  create new site configuration file at
+    /etc/apache2/sites/
+ 
+  restart apache server
+    sudo httpd -k restart
+

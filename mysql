@@ -1,1 +1,10 @@
-to start MySql server use preference pane1
+Version of MySql server 
+=============================
+Mac OS X 10.5 (x86, 64-bit), DMG Archive
+
+Start MySql Server
+=============================
+Use system preferences
+
+Connection with Ruby => Add the following line to ~/.bashrc
+  export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH

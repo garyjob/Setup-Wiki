@@ -27,3 +27,14 @@ CTRL + D to page down
 :sp to do horizontal split
 
 :e filename to open file
+
+SHIFT + A to insert at the end of the line
+
+Search for and replace all instances
+  SHIFT + v + later G to highlight all
+    :s/search/replace/gc
+       g for global
+       c for confirmation
+
+Delete Section
+ d + s
