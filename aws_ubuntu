@@ -51,7 +51,6 @@ In the gitosis folder run
   sudo python setup.py install
 
 #sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub
-sudo -H -u ubuntu gitosis-init < ~/.ssh/id_rsa.pub
 
 download nvm and move to ~/.nvm
     https://github.com/creationix/nvm.git

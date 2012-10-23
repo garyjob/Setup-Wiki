@@ -1,3 +1,18 @@
+Installing MongoDB
+=====================================
+Run command
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+
+Create file
+  /etc/apt/sources.list.d/10gen.list
+
+Add line in file
+  deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
+
+Run command
+  sudo apt-get update
+  sudo apt-get install mongodb-10gen
+
 To export data:
   mongoexport -d Database -c Collection -o Output file
 
