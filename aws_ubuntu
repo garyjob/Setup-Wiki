@@ -43,13 +43,20 @@ run in ~/.ssh/
 Install Git
 ==============================================
 sudo apt-get -y install git-core gitosis
-sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub
+
+git clone git://eagain.net/gitosis.git
+sudo apt-get install python-setuptools
+
+In the gitosis folder run 
+  sudo python setup.py install
+
+#sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub
+sudo -H -u ubuntu gitosis-init < ~/.ssh/id_rsa.pub
 
 download nvm and move to ~/.nvm
     https://github.com/creationix/nvm.git
 
-edit ~/.bashrc 
-edit ~/.profile
+edit ~/.profile # Do not put same entries in .bashrc or else will mess up git
     . ~/.nvm/nvm.sh
     nvm use v0.6.6
 
