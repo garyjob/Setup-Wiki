@@ -1,4 +1,8 @@
 ==================================================
+install xCode for MacOs X
+For Ubuntu
+  sudo apt-get install build-essential libssl-dev curl git-core
+
 install nvm
 edit .bashrc - put version of nodejs to use in here
 configure terminal to run bash
