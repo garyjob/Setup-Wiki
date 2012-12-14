@@ -73,6 +73,22 @@ edit in .bashrc
   export EC2_CERT=/home/ubuntu/api_credentials/x.509_cert.pem
   export JAVA_HOME=/usr/bin/java
 
+Install Nginx
+=================================================
+sudo apt-get install nginx
+
+To make possible bindings to port 443
+  Edit file
+    /etc/sysctl.conf
+
+  Add lines
+    # allow processes to bind to the non-local address
+    # (necessary for apache/nginx in Amazon EC2)
+    net.ipv4.ip_nonlocal_bind = 1
+
+  Restart service
+    sudo sysctl -p /etc/sysctl.conf
+
 See this page for funky elastic IP allocation
 =================================================
 https://help.ubuntu.com/community/EC2StartersGuide

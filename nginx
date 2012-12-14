@@ -8,6 +8,7 @@ Configure nginx server instance to use SSL certificate
 
 Current NGINX application location
 /usr/local/etc/nginx
+/usr/local/etc/nginx/nginx.conf
 
 To start Nginx application
 sudo nginx

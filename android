@@ -99,3 +99,41 @@ see what is the user id of the current process
 pretend to be a user
   su app_id 
 
+location of system app
+  /system/app
+
+================================ Highjacking other pple code ========================
+
+INSTALL 
+  apktool
+    brew install apktool
+  
+  dex2jar
+    download package
+    move package somewhere and then create a some link
+    sudo ln -s /Users/garyjob/Applications/dex2jar-0.0.9.11/dex2jar.sh dex2jar
+    
+  jad
+    download package
+    move package somewhere and then create a some link
+    sudo ln -s /Users/garyjob/Applications/jad/jad /usr/bin/jad
+
+
+NOW THE REAL FUN  
+adb shell 
+
+Location of third party applications
+  /data/app
+
+Extract from one or the other
+  adb pull /data/app/com.lookedout-1.apk
+  adb pull /mnt/asec/com.triposo.droidguide.barcelona-1/pkg.apk
+  
+use apktool to extract files from .apk package
+  apktool d com.lookout-1.apk
+  
+dex2jar.sh com.lookout-1.apk -> com.lookout-1.jar
+use jar to uncompress 
+  jar xvf name.jar
+
+use jad to decompile individual .class file

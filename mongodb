@@ -37,3 +37,10 @@ Remote authenticaion
 
 Get output from Mongodb
   db.logentries.find({},{details:1, date:1}).sort({date:-1}).limit(10)
+
+Update mongodb records
+  db.markers.update({user_id: "11297295676326828776"}, { $set: { user_id: '100000083895611'}}, false, true);
+
+Update mongodb records
+  db.markers.update({fb_event_id: {$ne : null}}, {$set: {content_source: 'facebook'}}, false, true)
+  db.markers.update({fb_event_id: null}, {$set: {content_source: null}}, false, true)
