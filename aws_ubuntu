@@ -8,7 +8,14 @@ default user is ubuntu
 
 Add new user
 ===============================================
-add user prod
+create user
+  sudo adduser prod
+
+Add user to sudo 
+  sudo adduser prod sudo
+
+Change ownership and group for authorized_keys
+
 Edit /etc/sudoers to add prod to sudoers list
 
 ssh -i thefile.pem ubuntu@awsserverlocation.com

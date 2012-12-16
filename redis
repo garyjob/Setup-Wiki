@@ -14,7 +14,7 @@ Install Git
 sudo apt-get -y install git-core gitosis
 sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub
 
-Installing Redis on computer
+Installing Redis on MacOS X computer
 ==================================================
 git clone http://github.com/antirez/redis.git
 cd redis/src
