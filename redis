@@ -1,46 +1,46 @@
-Important stuff
-============================================
-sudo apt-get update
-sudo apt-get install build-essential
-sudo passwd -l root
-
-Create SSH key
+Prerequsities - Create SSH key
 ==============================================
 run in ~/.ssh/
 ssh-keygen -t rsa
 
-Install Git
+Prerequsities - Install Git
 ==============================================
 sudo apt-get -y install git-core gitosis
 sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub
 
-Installing Redis on MacOS X computer
-==================================================
-git clone http://github.com/antirez/redis.git
-cd redis/src
- make
-sudo make install
-cd ../..
-rm -rf redis
 
-command to run server : redis-server
+Redis installation on Ubuntu - Method 1
+===========================================================================
+Add the following entries in file /etc/apt/sources.list.d/dotdeb.org.list
+    deb http://packages.dotdeb.org stable all
+    deb-src http://packages.dotdeb.org stable all
 
-command to run client : redis-cli
-
-Installing Redis on Ubuntu Server
-==================================================
-# /etc/apt/sources.list.d/dotdeb.org.list
-deb http://packages.dotdeb.org stable all
-deb-src http://packages.dotdeb.org stable all
-
-Run command 
+Run commands
     wget -q -O - http://www.dotdeb.org/dotdeb.gpg 
     sudo apt-key add dotdeb.gpg
+    sudo aptitude update
+    sudo aptitude install redis-server
+    
 
-sudo aptitude update
-sudo aptitude install redis-server
 
-Installing Redis on Ubuntu Server
-=================================================
-sudo apt-get install redis-server
+Installing Redis on MacOS X computer - Method 2
+===========================================================================
+Do a local clone
+    git clone http://github.com/antirez/redis.git
+    
+Go to local redis repository 
+    cd redis/src
+    
+Run commands in the folder
+    make
+    sudo make install
 
+Clean up unused files
+    cd ../..
+    rm -rf redis
+
+command to run server : 
+    redis-server
+
+command to run client : 
+    redis-cli
