@@ -1,15 +1,20 @@
-==================================================
+====================Quick install instructions==============================
 install xCode for MacOs X
 For Ubuntu
   sudo apt-get install build-essential libssl-dev curl git-core
 
-install nvm
+to install nvm
+  cd ~/
+  git clone https://github.com/creationix/nvm.git
+  mv nvm .nvm
+  
 edit .bashrc - put version of nodejs to use in here
 configure terminal to run bash
-nvm install version of nodejs
-Install Node JS
+run command to install version of nodejs
+  nvm install v0.8.8
 
-============== Organization wide upgrade of NodeJs Version ====================
+
+============== Process: Organization wide upgrade of NodeJs Version ====================
 
 1. Declaration of nodejs version to use
 
