@@ -2,9 +2,41 @@ Nginx
 ==================================================
 Install Ruby
 Install Homebrew
-Use homebrew to install Nginx
+
+Run brew commands
+  brew update
+  brew install nginx
+  brew link nginx
+
 Download SSL certificates
+  disconnect_combined.crt
+  disconnect.key
+    
 Configure nginx server instance to use SSL certificate
+
+  http{
+      ....
+      ssl_certificate      /Users/garyjob/Applications/ssl_certs/disconnect_combined.crt;
+      ssl_certificate_key  /Users/garyjob/Applications/ssl_certs/disconnect.key;
+      ...
+      upstream blimp {
+        server 127.0.0.1:3000 max_fails=0;
+      }  
+
+      server {
+        server_name staging.disconnect.me;
+        listen 443;
+        ssl on;
+        add_header Strict-Transport-Security max-age=500;
+        location / {
+          proxy_pass  http://blimp;
+          proxy_redirect off;
+          proxy_set_header Host $host ;
+          proxy_set_header X-Real-IP $remote_addr ;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for ;
+        }
+      } 
+  }
 
 Current NGINX application location
 /usr/local/etc/nginx

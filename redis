@@ -3,7 +3,7 @@ Prerequsities - Create SSH key
 run in ~/.ssh/
 ssh-keygen -t rsa
 
-Prerequsities - Install Git
+Prerequsities - Install Git - ubuntu
 ==============================================
 sudo apt-get -y install git-core gitosis
 sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub

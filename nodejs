@@ -8,8 +8,17 @@ to install nvm
   git clone https://github.com/creationix/nvm.git
   mv nvm .nvm
   
-edit .bashrc - put version of nodejs to use in here
+edit .bashrc add lines - put version of nodejs to use in file
+
+  #nvm configuration
+  . ~/.nvm/nvm.sh
+  nvm use v0.8.8
+  
 configure terminal to run bash
+  Terminal > Preferences > Shell > Run command
+    check box 
+    enter "bash" in textbox
+    
 run command to install version of nodejs
   nvm install v0.8.8
 
