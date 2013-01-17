@@ -17,3 +17,22 @@ Adding new sites to local Apache Server
   restart apache server
     sudo httpd -k restart
 
+Enable and disable virtual host
+=======================================
+sudo a2ensite
+
+sudo a2dissite
+
+sudo a2enmod
+
+sudo a2dismod
+
+To enable multiple virtual host listening to same port
+======================================
+
+in the following file : /etc/apache2/port.conf
+
+in <IfModule mod_ssl.c>
+  add NameVirtualHost *:443
+
+restart server

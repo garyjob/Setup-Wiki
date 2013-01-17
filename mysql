@@ -8,3 +8,11 @@ Use system preferences
 
 Connection with Ruby => Add the following line to ~/.bashrc
   export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+Export Data
+============================
+mysqldump -u root -p --no-data mydb > bkp1.sql
+
+Import Data
+============================
+mysql -u username -p -h localhost DATA-BASE-NAME < data.sql
