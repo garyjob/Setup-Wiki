@@ -14,7 +14,7 @@ Get the zipped package
   wget http://phantomjs.googlecode.com/files/phantomjs-1.8.1-linux-x86_64.tar.bz2
 
 Move package to actual directory
-  mv ~/phantomjs-1.8.1-linux-x86_64.tar.bz2 /usr/local/share
+  sudo mv ~/phantomjs-1.8.1-linux-x86_64.tar.bz2 /usr/local/share
 
 Go to actual location
   cd /usr/local/share
@@ -29,4 +29,7 @@ Setup soft links
   # Links phantomjs in bin to actual bin
   sudo ln -s /usr/local/share/phantomjs/bin/phantomjs /usr/local/bin/phantomjs
 
-
+Check that phantomJs was setup properly
+  phantomjs --version
+  # output should show 
+  #   1.8.1
