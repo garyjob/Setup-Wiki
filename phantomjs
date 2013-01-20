@@ -1,4 +1,12 @@
-Installation on Macox X
+Installation on Macox X - using homebrew recommended
+==========================================
+Install the actual binaries
+  brew install phantomjs
+
+See what else we need to do to link to the library
+  brew info phantomjs
+
+Installation on Macos X - manual installation and build from scratch not so recommended
 ==========================================
 git clone git://github.com/ariya/phantomjs.git
 cd phantomjs
