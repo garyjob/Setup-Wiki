@@ -1,0 +1,32 @@
+Installation on Macox X
+==========================================
+git clone git://github.com/ariya/phantomjs.git
+cd phantomjs
+git checkout 1.8
+./build.sh
+
+Installation on Ubuntu - 64 bit system
+==========================================
+Go to default working directory
+  cd ~
+
+Get the zipped package
+  wget http://phantomjs.googlecode.com/files/phantomjs-1.8.1-linux-x86_64.tar.bz2
+
+Move package to actual directory
+  mv ~/phantomjs-1.8.1-linux-x86_64.tar.bz2 /usr/local/share
+
+Go to actual location
+  cd /usr/local/share
+
+Unzip contents of package
+  sudo tar xvf phantomjs-1.8.1-linux-x86_64.tar.bz2
+
+Setup soft links
+  # Links phantomjs to the actual version of phantom
+  sudo ln -s /usr/local/share/phantomjs-1.8.1-linux-x86_64 /usr/local/share/phantomjs
+
+  # Links phantomjs in bin to actual bin
+  sudo ln -s /usr/local/share/phantomjs/bin/phantomjs /usr/local/bin/phantomjs
+
+
