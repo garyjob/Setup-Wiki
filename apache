@@ -6,7 +6,7 @@ ps aux | grep httpd
 
 sudo kill -9 pid
 
-Location of local Apache Server
+Location of local Apache Server - Macos X
   /etc/apache2
 
 Adding new sites to local Apache Server

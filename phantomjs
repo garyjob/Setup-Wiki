@@ -15,6 +15,9 @@ git checkout 1.8
 
 Installation on Ubuntu - 64 bit system
 ==========================================
+Install dependency
+  sudo apt-get install fontconfig
+
 Go to default working directory
   cd ~
 
