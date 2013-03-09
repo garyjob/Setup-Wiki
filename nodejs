@@ -1,5 +1,8 @@
 ====================Quick install instructions==============================
+upgrade MacOs X to at least Mountain Lion
 install xCode for MacOs X
+  under preferences > downloads > install command line tools
+
 For Ubuntu
   sudo apt-get install build-essential libssl-dev curl git-core
 
