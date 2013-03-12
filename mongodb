@@ -47,3 +47,4 @@ Update mongodb records
 
 To start mongodb server using a different directory to store data versus the default
   mongod --dbpath /usr/local/mongodb-data
+  mongod --dbpath "/Volumes/Seagate Backup Plus Drive/mongo"
