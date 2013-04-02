@@ -44,3 +44,7 @@ Update mongodb records
 Update mongodb records
   db.markers.update({fb_event_id: {$ne : null}}, {$set: {content_source: 'facebook'}}, false, true)
   db.markers.update({fb_event_id: null}, {$set: {content_source: null}}, false, true)
+
+To start mongodb server using a different directory to store data versus the default
+  mongod --dbpath /usr/local/mongodb-data
+  mongod --dbpath "/Volumes/Seagate Backup Plus Drive/mongo"
