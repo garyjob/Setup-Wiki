@@ -43,7 +43,7 @@ Create first cluster
 
 Configure to allow for remote connection
   Add in file pg_hba.conf
-    host all all 10.10.29.0/24 trust
+    host all all 0.0.0.0/0 md5
 
   Add in file postgresql.conf
     listen_addresses='*'
