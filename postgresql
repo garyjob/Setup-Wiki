@@ -41,6 +41,13 @@ Set Locale --> http://bookmarks.honewatson.com/2009/05/30/perl-warning-please-ch
 Create first cluster
   pg_createcluster 9.1 main --start
 
+Configure to allow for remote connection
+  Add in file pg_hba.conf
+    host all all 10.10.29.0/24 trust
+
+  Add in file postgresql.conf
+    listen_addresses='*'
+
 Change password of ubuntu user account user - postgres 
   sudo passwd postgres
 
@@ -52,3 +59,4 @@ Create a new user in postgres database - in this case user is prod
 
 Logging into PSQL
   psql postgres
+
