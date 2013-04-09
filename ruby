@@ -30,6 +30,7 @@ Make connection to mysql server and create database
 
 Start server
   rails server
+  rails server -e production -p 3000
 
 Create a Resource (that represents Object in this Application)
   rails generate scaffold Post name:string title:string content:text
