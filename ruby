@@ -60,6 +60,9 @@ Start process in foreground
 Start process in background
   unicorn -D -p 3000
 
+Start process in background in production environment at port 3002
+  unicorn -D -p 3002 -E production
+
 Stop process running in background
   sudo kill <process_id>
 
