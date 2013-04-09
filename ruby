@@ -51,8 +51,11 @@ Porting of existing installation over to new server
   sudo gem install unicorn
   bundle install
 
+In production environment
+  rake db:migrate RAILS_ENV="production" 
+
 Start process in foreground
-  unicorn -p 3000
+  unicorn -p 3000  
 
 Start process in background
   unicorn -D -p 3000
@@ -68,7 +71,20 @@ rails generate devise:install
 rails generate devise users
 rails generate devise:views
 rails generate devise:views users
+
+# Add listing pages to members
+rails rails g controller users listing
+
+# Add detail pages to members
+rails rails g controller users show
+
+
 rake routes
+
+# Add user name to user object
+rails g migration add_username_to_users name:string
+
+rake db:migrate
 
 Create user
 ------------------

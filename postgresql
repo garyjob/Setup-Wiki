@@ -57,6 +57,14 @@ Switch to postgres account
 Create a new user in postgres database - in this case user is prod
   sudo -u postgres createuser -D -P prod 
 
-Logging into PSQL
+Logging into PSQL - the name of the database is  <postgres>
   psql postgres
+
+Querying database
+==============================
+Selecting rows from table in public schema
+  SELECT 
+    * 
+  FROM 
+    public."myTable";
 
