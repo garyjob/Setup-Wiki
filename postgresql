@@ -28,6 +28,9 @@ Install Postgresql
   sudo apt-get install postgresql
   sudo apt-get install postgresql-9.1 libpq-dev
 
+Install Postgresql dependency for HSTORE
+  sudo apt-get install postgresql-contrib
+
 Check to make sure Postgresql is installed
    locate postgresql
 
@@ -59,6 +62,9 @@ Create a new user in postgres database - in this case user is prod
 
 Logging into PSQL - the name of the database is  <postgres>
   psql postgres
+
+Install HStore extension
+  CREATE EXTENSION hstore;
 
 Querying database
 ==============================
