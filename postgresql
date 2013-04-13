@@ -15,6 +15,8 @@ Stopping Postgresql Server
 To login to console for database <postgres>
   psql postgres
 
+Install HStore extension, run the following command in the PSQL shell
+  CREATE EXTENSION hstore;
 
 Ubuntu 
 ===========================================================
@@ -63,7 +65,7 @@ Create a new user in postgres database - in this case user is prod
 Logging into PSQL - the name of the database is  <postgres>
   psql postgres
 
-Install HStore extension
+Install HStore extension, run the following command in the PSQL shell
   CREATE EXTENSION hstore;
 
 Querying database
