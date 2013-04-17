@@ -19,7 +19,7 @@ Add lines in the ~/.bashrc file
   export PATH=$JAVA_HOME/bin:$PATH
   export EC2_HOME=/home/prod/aws-ec2-cli
   export PATH=$PATH:$EC2_HOME/bin
-  export AWS_ACCESS_KEY=AKIAJUY7RG7SZNNQMDBA
-  export AWS_SECRET_KEY=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
+  export AWS_ACCESS_KEY=SOMETHING
+  export AWS_SECRET_KEY=SOMETHING
 
 AWS command line tools is ready for use
