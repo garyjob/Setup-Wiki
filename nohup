@@ -1,0 +1,13 @@
+# Daemonizes a script
+# in this case phantomJs
+    nohup phantomjs server.js 
+
+# runs it in the background
+    nohup phantomjs server.js &
+
+# Writes the logs to a specific file
+    nohup phantomjs server.js > nohup_sumarylogfile 2>&1 &
+
+# Gets the PID of the nohup script that is running in the background using awk and grep
+    ps aux | grep server.js | awk '{print $2}'
+

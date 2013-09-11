@@ -64,9 +64,9 @@ download nvm and move to ~/.nvm
 
 edit ~/.profile # Do not put same entries in .bashrc or else will mess up git
     . ~/.nvm/nvm.sh
-    nvm use v0.6.6
+    nvm use v0.8.8
 
-nvm install v0.6.6
+nvm install v0.8.8
 
 sudo apt-get install ec2-api-tools
 

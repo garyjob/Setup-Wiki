@@ -63,6 +63,7 @@ Start process in background
 
 Start process in background in production environment at port 3002
   unicorn -D -p 3002 -E production
+  rails server -e production -p 3002 -d
 
 Stop process running in background
   sudo kill <process_id>
@@ -113,7 +114,11 @@ sudo gem install cancan
 sudo gem install rolify
 #Add cancan and rolify in GemFile
 rails generate cancan:ability
+
 rails generate rolify:role
+# For more specific application
+  rails g rolify:role Role Member
+
 rake db:migrate
 
 ========================= Viewing documentation ===================================
