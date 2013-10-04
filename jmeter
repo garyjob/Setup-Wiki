@@ -1,0 +1,18 @@
+# JMeter
+
+# install MacOS X
+  - Download Package
+
+# Load testing using cloud
+http://jmeter.apache.org/usermanual/remote-test.html
+
+# Individual test cases 
+http://jmeter.apache.org/usermanual/component_reference.html#samplers
+
+# Procedures for setting up load testing
+http://jmeter.apache.org/usermanual/jmeter_distributed_testing_step_by_step.pdf
+
+# Setting up of Bridge in Jenkins
+Install performance plugin
+Refer to instructions in article
+  http://neyto.blogspot.com/2013/02/install-jenkins-with-jmeter-performance_2208.html
