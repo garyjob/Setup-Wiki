@@ -92,6 +92,18 @@ sudo -H -u postgres /usr/lib/postgresql/9.2/bin/pg_upgrade \
    -O ' -c config_file=/etc/postgresql/9.2/main/postgresql.conf'
 ```
 
+Change the port number of psql-9.2 from 5433 to 5432 in the 
+/etc/postgresql/9.2/main/postgresql.conf
+
+```console
+sudo /etc/init.d/postgresql start version 9.2
+
+# Remove old version 9.1
+sudo apt-get remove postgresql-9.1
+```
+
+
+
 Querying database
 ==============================
 Selecting rows from table in public schema
