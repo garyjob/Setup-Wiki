@@ -134,3 +134,8 @@ List all methods belonging to object
 
 List all properties belonging to object
   User
+
+Testing
+======
+binding.pry # breaks the code there
+, :focus # to test only one test case

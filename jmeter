@@ -1,18 +1,62 @@
 # JMeter
+To use version 2.9
 
-# install MacOS X
-  - Download Package
+# install macosX
+  brew install jmeter
 
-# Load testing using cloud
-http://jmeter.apache.org/usermanual/remote-test.html
 
-# Individual test cases 
-http://jmeter.apache.org/usermanual/component_reference.html#samplers
+# install Ubuntu
+  wget http://www.motorlogy.com/apache//jmeter/binaries/apache-jmeter-2.9.tgz
+  tar -xvf apache-jmeter-2.9.tgz
 
-# Procedures for setting up load testing
-http://jmeter.apache.org/usermanual/jmeter_distributed_testing_step_by_step.pdf
 
-# Setting up of Bridge in Jenkins
-Install performance plugin
-Refer to instructions in article
-  http://neyto.blogspot.com/2013/02/install-jenkins-with-jmeter-performance_2208.html
+# Creating test
+  watch this video on how to use JMeter - http://www.youtube.com/watch?v=8NLeq-QxkSw
+  ensure listener is configured to output XML format
+  indicate the location to write the output result to
+  save the test file as test_configuration.jmx
+
+
+# Create user property files
+
+
+# Usage via command line
+
+  # Using user property file
+  jmeter -n -p jmeter.properties -t test_configuration.jmx -l test_result.jtl
+  
+  # Using property input
+  jmeter -n -Jjmeter.save.saveservice.output_format=xml -t test_configuration.jmx -l test_result.jtl
+  
+  # Starting remote slaves and running test on them
+  jmeter -n -p jmeter.properties -t config_jmeter_job.jmx -r -l /tmp/jmeter_result.jtl
+  
+  # Starting the remote server from binary
+  java -jar ApacheJMeter.jar -s
+
+
+
+
+#References
+  
+  Load testing configuration
+    http://lincolnloop.com/blog/load-testing-jmeter-part-2-headless-testing-and-je/
+    
+  Load testing using cloud
+    http://jmeter.apache.org/usermanual/remote-test.html
+
+  Individual test cases 
+    http://jmeter.apache.org/usermanual/component_reference.html#samplers
+
+  Procedures for setting up load testing
+    http://jmeter.apache.org/usermanual/jmeter_distributed_testing_step_by_step.pdf
+
+  Setting up of Bridge in Jenkins
+    Install performance plugin
+    Refer to instructions in article
+      http://neyto.blogspot.com/2013/02/install-jenkins-with-jmeter-performance_2208.html
+
+  Remote cluster configuration
+    https://cloud.google.com/resources/articles/how-to-configure-ssh-port-forwarding-set-up-load-testing-on-compute-engine
+    http://www.coldfusionmuse.com/index.cfm/2011/7/26/jmeter-in-distributed-mode
+    http://jmeter.apache.org/usermanual/remote-test.html

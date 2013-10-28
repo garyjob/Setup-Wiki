@@ -1,6 +1,51 @@
 # Jenkins 
  
 ## Install — MacOS X
-  - Go to URL : https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
-  - Download and install Jenkins package on page
+  brew install jenkins
 
+  ### Start manually
+    java -jar /usr/local/opt/jenkins/libexec/jenkins.war
+
+  ### Start service
+    sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist
+
+  ### Stop service
+    sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
+
+## Further references
+https://wiki.jenkins-ci.org/display/JENKINS/Thanks+for+using+OSX+Installer
+
+
+## Install — Ubuntu 
+  - wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+  - sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+  - sudo apt-get update
+  - sudo apt-get install jenkins  
+
+
+
+## Integration with JMeter
+
+  install plugin — name : performance plugin
+  create Job — type 
+  
+  For further references on setup of Job refer to
+  http://ribblescode.wordpress.com/2012/04/16/how-to-automate-jmeter-tests-with-maven-and-jenkins-hudson-8/
+  
+  For further references on preloading of Jenkins instance with pre-configurations refer to 
+  https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins
+  
+
+# Jenkins settings directory
+  ~/.jenkins
+  
+  MacOS X - Jenkins settings directory ~/.jenkins
+  Copy 
+    /config.xml
+    /jobs/[JOB]
+
+# Jenkins Command line
+  # Download package at http://localhost:8080/cli
+
+# Package installation 
+  vagrant ssh jks -c "java -jar /vagrant/tools/jenkins-cli.jar -s http://localhost:8080/ install-plugin http://updates.jenkins-ci.org/latest/performance.hpi"
