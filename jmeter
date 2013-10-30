@@ -1,11 +1,13 @@
 # JMeter
 To use version 2.9
 
-# install macosX
+# installing on macosX
   brew install jmeter
 
+## Location of installation
+/usr/local/Cellar/jmeter/2.9/libexec/bin
 
-# install Ubuntu
+# installing on Ubuntu
   wget http://www.motorlogy.com/apache//jmeter/binaries/apache-jmeter-2.9.tgz
   tar -xvf apache-jmeter-2.9.tgz
 
@@ -35,6 +37,10 @@ To use version 2.9
   java -jar ApacheJMeter.jar -s
 
 
+# Installation of customized plugins
+
+.jar Dependencies used by customized plugins should go to location <<jmeter_root>>/lib/
+.jar plugins should go into location <<jmeter_root>>/lib/ext
 
 
 #References
@@ -60,3 +66,10 @@ To use version 2.9
     https://cloud.google.com/resources/articles/how-to-configure-ssh-port-forwarding-set-up-load-testing-on-compute-engine
     http://www.coldfusionmuse.com/index.cfm/2011/7/26/jmeter-in-distributed-mode
     http://jmeter.apache.org/usermanual/remote-test.html
+
+  Developing of custom plugins
+    http://jmeter.apache.org/extending/jmeter_tutorial.pdf
+    
+  Installation of plugins
+    http://jmeter-plugins.org/wiki/PluginInstall/
+    https://github.com/Netflix/CassJMeter/wiki/Installation-Instruction
