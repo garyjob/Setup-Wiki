@@ -1,0 +1,6 @@
+# Command
+  ec2-run-instances ami-b0eaa1e2 -n 1 -g "Krake Instance" -k mbd_singapore -f kick_start.sh -t t1.micro --region ap-southeast-1
+
+# contents in kick_start.sh
+  #!/bin/sh
+  touch /home/prod/my_god.txt

@@ -55,12 +55,14 @@ Configure to allow for remote connection
 
 Change password of ubuntu user account user - postgres 
   sudo passwd postgres
+  sudo adduser postgres sudo
+  Edit /etc/sudoers to add postgres to sudoers list  
 
 Switch to postgres account
   su postgres
 
 Create a new user in postgres database - in this case user is prod
-  sudo -u postgres createuser -D -P prod 
+  sudo -u postgres createuser -D -P prod
 
 Logging into PSQL - the name of the database is  <postgres>
   psql postgres

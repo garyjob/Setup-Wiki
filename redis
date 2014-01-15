@@ -12,14 +12,14 @@ sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub
 Redis installation on Ubuntu - Method 1
 ===========================================================================
 Add the following entries in file /etc/apt/sources.list.d/dotdeb.org.list
-    deb http://packages.dotdeb.org stable all
-    deb-src http://packages.dotdeb.org stable all
+deb http://packages.dotdeb.org stable all
+deb-src http://packages.dotdeb.org stable all
 
 Run commands
-    wget -q -O - http://www.dotdeb.org/dotdeb.gpg 
-    sudo apt-key add dotdeb.gpg
-    sudo aptitude update
-    sudo aptitude install redis-server
+# wget -q -O - http://www.dotdeb.org/dotdeb.gpg 
+# sudo apt-key add dotdeb.gpg
+sudo aptitude update
+sudo aptitude install redis-server
     
 
 

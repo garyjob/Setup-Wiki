@@ -1,13 +1,45 @@
-To see the status of the rewriters, go to
-  https://proxy.disconnect.me/haproxy?stats
+# Installing Haproxy
+## Macos
+brew install haproxy
 
-User name and password is 
-  myuser:mypass
+## Ubuntu
+Sudo apt-get install haproxy
 
-It is written in the haproxy config file
 
-To restart haproxy
-  kill instance, ps aux | grep haproxy
+# Sample haproxy conf
+global
+    daemon
+    maxconn 256
+ 
+defaults
+    mode http
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+ 
+frontend http-in
+    bind *:8080
+    default_backend api_server
+ 
+backend api_server
+    server s1 204.236.207.28:9800 maxconn 32
+ 
+listen admin
+    bind *:9999
+    stats enable
 
-To start haproxy
+# Operating HAPROXY 
+## Macos X
+
+### To start haproxy
   haproxy -f /etc/haproxy/haproxy.cfg 
+
+### To restart haproxy  
+ps aux | grep haproxy | awk '{print $2}' | xargs sudo kill
+
+
+### Data migration examples
+pg_dump -C dev_panel | bzip2 | ssh  prod@krake_ovh "bunzip2 | psql dev_panel"
+pg_dump -C dev_panel_development | bzip2 | ssh  prod@krake_ovh "bunzip2 | psql dev_panel_development"
+pg_dump -C scraped_data_repo | bzip2 | ssh  prod@krake_ovh "bunzip2 | psql scraped_data_repo"
+pg_dump -C scraped_data_repo_development | bzip2 | ssh  prod@krake_ovh "bunzip2 | psql scraped_data_repo_development"

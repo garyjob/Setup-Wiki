@@ -1,43 +1,27 @@
-Installation on Macox X - using homebrew recommended
-==========================================
+# Installation on Macox X - using homebrew recommended
 Install the actual binaries
   brew install phantomjs
 
 See what else we need to do to link to the library
   brew info phantomjs
 
-Installation on Macos X - manual installation and build from scratch not so recommended
-==========================================
+# Installation on Macos X - manual installation and build from scratch not so recommended
 git clone git://github.com/ariya/phantomjs.git
 cd phantomjs
 git checkout 1.8
 ./build.sh
 
-Installation on Ubuntu - 64 bit system
-==========================================
-Install dependency
-  sudo apt-get install fontconfig
+# Installation on Ubuntu - 64 bit system
+## Install dependency
+sudo apt-get install fontconfig
 
-Go to default working directory
-  cd ~
-
-Get the zipped package
-  wget http://vntin.com/phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2 
-Move package to actual directory
-  sudo mv ~/phantomjs-1.9.2-linux-x86_64.tar.bz2 /usr/local/share
-
-Go to actual location
-  cd /usr/local/share
-
-Unzip contents of package
-  sudo tar xvf phantomjs-1.9.2-linux-x86_64.tar.bz2  
-
-Setup soft links
-  # Links phantomjs to the actual version of phantom
-  sudo ln -s /usr/local/share/phantomjs-1.9.2-linux-x86_64.tar.bz2  /usr/local/share/phantomjs
-
-  # Links phantomjs in bin to actual bin
-  sudo ln -s /usr/local/share/phantomjs/bin/phantomjs /usr/local/bin/phantomjs
+## Run commands
+cd /usr/local/share
+wget http://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2
+tar xjf phantomjs-1.9.2-linux-x86_64.tar.bz2
+sudo ln -s /usr/local/share/phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
+sudo ln -s /usr/local/share/phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+sudo ln -s /usr/local/share/phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
 
 Check that phantomJs was setup properly
   phantomjs --version

@@ -20,6 +20,12 @@ Edit /etc/sudoers to add prod to sudoers list
 
 ssh -i thefile.pem ubuntu@awsserverlocation.com
 
+Configuring SSH
+================================================
+Make sure to have your public key installed first before enabling this option
+PasswordAuthentication no
+
+
 Install AWS EC@ API on system
 ================================================
 Edit /etc/passwd to change shell access directly into bash
@@ -29,11 +35,11 @@ Enabled Multiverse in Ubuntu, edit file
 
 Paste in  /etc/apt/sources.list
 ==========================================
-    #Multiverse enabling for EC2
-    deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
-    deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
-    deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
-    deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+#Multiverse enabling for EC2
+deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
 
 When setting a new ubuntu instance
 ================================================
@@ -60,7 +66,7 @@ In the gitosis folder run
 #sudo -H -u gitosis gitosis-init < ~/.ssh/id_rsa.pub
 
 download nvm and move to ~/.nvm
-    https://github.com/creationix/nvm.git
+git clone https://github.com/creationix/nvm.git .nvm
 
 edit ~/.profile # Do not put same entries in .bashrc or else will mess up git
     . ~/.nvm/nvm.sh
