@@ -1,0 +1,24 @@
+Git clone 
+  https://github.com/applicake/doorkeeper-provider-app
+
+Run command
+  bundle install
+  bundle exec rake:reset
+
+
+Register your app at http://localhost:3000/oauth/applications/new
+
+Making of an authorization call
+http://localhost:3000/oauth/authorize?client_id=59426f6e6a5a31728ea65ef251ab4ee6e20824d1d1dbda7b542f999c870927ff&redirect_uri=http://localhost:2000&response_type=code
+
+Redirect URL:
+http://localhost:2000/?code=6a70bcf78a716f939fa00aa7a219858d59f41c26d21056c2e98dc4e60769ec4f
+  
+  authorization code = 6a70bcf78a716f939fa00aa7a219858d59f41c26d21056c2e98dc4e60769ec4f
+
+Get the auth_token
+====
+curl -X POST  -d 'client_id=59426f6e6a5a31728ea65ef251ab4ee6e20824d1d1dbda7b542f999c870927ff&client_secret=49e70909cd277b7763e7511bed281759881d7a5281a446c9bad66d5657eaa237&code=6a70bcf78a716f939fa00aa7a219858d59f41c26d21056c2e98dc4e60769ec4f&grant_type=authorization_code&redirect_uri=http://localhost:2000' http://localhost:3000/oauth/token -i
+
+
+{"access_token":"e1dce845109b202f7f53ab08ee5e0ed8720b15bee261e71837ff5c829599c4a9","token_type":"bearer","expires_in":300,"refresh_token":"6f8a41a9c1e39dd58f3a9876fef5986aa0ed869bfee6ab5afcc27e81c408f923"}

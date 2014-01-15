@@ -26,6 +26,7 @@ When package is not main
 
   run the following command at the <<project space>>/src
     go install github.com/garyjob/hello-go
+    go install github.com/edmodo/deliver    
     
   Command will create a .a file in the <<root project>>/pkg folder
 
@@ -34,5 +35,8 @@ Go build command
 
 Installing remote packages
   go get git.apache.org/thrift.git/lib/go/thrift
+  go get github.com/edmodo/deliver
+  
+  remote all protocols
   
   To consider trying — deliver

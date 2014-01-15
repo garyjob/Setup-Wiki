@@ -125,6 +125,11 @@ rake db:migrate
 gem server
 
 ======================== Rails console ============================================
+
+rails console test
+rails console production
+rails console development
+
 Using help
 User help
 Method name to show how to use it
@@ -139,3 +144,15 @@ Testing
 ======
 binding.pry # breaks the code there
 , :focus # to test only one test case
+
+====================== Rspec ============================
+Files are located in the spec folder
+
+===================== Seeds ==========================
+Automatically populated a database using CSV files provided
+to insert functions to call at <<project_location>>/db/seeds.rb
+to add my_rake_file.rake at <<project_location>>/lib/tasks/my_rake_file.rake
+
+==================== Editing Gems ====================
+export EDITOR="subl"
+bundle open sidekiq-unique-jobs

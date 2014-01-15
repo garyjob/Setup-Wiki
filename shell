@@ -9,3 +9,6 @@ Curl test for pingback
 
 Curl test for private search
   curl -H 'Cookie: __beta=blimply123' -I https://staging.disconnect.me/-hide-/https://www.google.com/blank.html
+
+Times the total transaction time for a command call
+  time curl http://google.com
