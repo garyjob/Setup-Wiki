@@ -1,0 +1,8 @@
+# General procedures to compile from source and installing
+
+1. Download package
+2. Unpack into tmp
+3. navigate into the root folder of the package directory
+4. ./configure
+5. make
+6. install

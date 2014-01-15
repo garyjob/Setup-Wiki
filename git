@@ -13,3 +13,29 @@ link to a remote repository
 
 To check git repository information
   ./.git/config
+
+
+Configuration for colors
+
+  in ~/.gitconfig
+
+  add the following lines
+
+  [color]
+    ui = always
+  [color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+  [color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+  [color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+Extending it
+  https://github.com/nojhan/liquidprompt

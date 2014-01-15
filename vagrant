@@ -1,0 +1,52 @@
+# Vagrant
+
+## Install
+Download and install the following package
+  http://files.vagrantup.com/packages/0ac2a87388419b989c3c0d0318cc97df3b0ed27d/Vagrant-1.3.4.dmg
+
+Download and install the VirtualBox
+  http://download.virtualbox.org/virtualbox/4.2.8/VirtualBox-4.2.8-83876-OSX.dmg
+
+## Project setup
+  Create directory
+  Run following command in directory
+    vagrant init
+
+## Setup an Ubuntu Box
+  vagrant box add ubuntu http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box
+
+## Configuration
+  Paste the following in the directory's VagrantFile
+
+    Vagrant::Config.run do |config|
+      config.vm.box = "ubuntu"
+    end
+    
+  New configuration kicks in everytime vagrant is halted and up
+
+## Running vagrant instance
+  vagrant up
+
+## Shutting down the vagrant instance
+  vagrant halt
+
+## Destroying vagrant instance
+  vagrant destroy
+
+## SSH into instance
+  vagrant ssh <<instance name>>
+  
+## Normal SSH into instance
+  vagrant ssh-config <<instance name>> - 
+    get 
+      identify file location
+      SSH port number
+      IP address
+      
+  ssh vagrant@127.0.0.1 -p 2202 -i /Users/gary/.vagrant.d/insecure_private_key
+  
+
+
+# References
+http://docs-v1.vagrantup.com/v1/docs/getting-started/boxes.html
+

@@ -50,3 +50,7 @@ Or, if you don't want/need launchctl, you can just run:
 
 >>> Installation of new DB
 mysql_install_db --verbose --user=`garyjob` --basedir="$(brew --prefix mysql)" --datadir="/Volumes/Seagate Backup Plus Drive/mysql/data" --tmpdir=/tmp
+
+datadir on MySql 
+/usr/local/var/mysql
+
