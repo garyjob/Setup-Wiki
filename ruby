@@ -9,6 +9,9 @@ Install Ruby (For Ubuntu)
 Install rvm
   curl -L https://get.rvm.io | bash -s stable --ruby
 
+Update rvm
+  rvm get stable
+
 Upgrading Ruby
   sudo rvm install 1.9.3 --with-gcc=clang
 

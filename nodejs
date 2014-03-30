@@ -75,6 +75,9 @@ run command to install version of nodejs
 
     - monitor log for 48 hours to ensure system stability
 
+5. Upgrading of NPM to the latest version to resolve SSL Certificate Error
+    - npm install npm -g --ca=""
+
 Appending to the same log
 ===
 forever -a -l ~/slave_logs start -c coffee krake_slave_server.coffee DEMO
