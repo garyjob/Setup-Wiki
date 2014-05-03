@@ -1,0 +1,14 @@
+# Capistrano
+
+Add the following lines to your GemFile
+```ruby
+group :development do
+  gem "capistrano-rails"
+end
+```
+
+Run commands to setup capistrano for project
+```console
+bundle install
+cap install
+```
