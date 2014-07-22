@@ -1,0 +1,11 @@
+Installing
+===
+brew install memcached
+
+Loading memcache
+===
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
+
+Running memcache
+===
+/usr/local/opt/memcached/bin/memcached

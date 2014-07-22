@@ -31,11 +31,11 @@ To use version 2.9
   jmeter -n -Jjmeter.save.saveservice.output_format=xml -t test_configuration.jmx -l test_result.jtl
   
   # Starting remote slaves and running test on them
-  jmeter -n -p jmeter.properties -t config_jmeter_job.jmx -r -l /tmp/jmeter_result.jtl
+  #   Parameter: -r
+  jmeter -n -r -p jmeter.properties -t config_jmeter_job.jmx -l /tmp/jmeter_result.jtl
   
   # Starting the remote server from binary
   java -jar ApacheJMeter.jar -s
-
 
 # Installation of customized plugins
 
