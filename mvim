@@ -38,3 +38,20 @@ Search for and replace all instances
 
 Delete Section
  d + s
+
+
+Mass commenting
+  put cursor over first #
+  press
+    ctrl + v
+  go down to last #
+  press 
+    x
+
+Mass uncommenting
+  put cursor over first spot where you want the # inserted
+  press 
+    ctrl + v
+  go down to last sport
+  press
+    i # Esc
