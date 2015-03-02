@@ -1,4 +1,4 @@
-SSL certificates
+SSL certificates - GoDaddy
 ==================================================
 
 Create CSR file with the following command
@@ -19,3 +19,22 @@ restart Nginx and Apache servers
 Files to upload
   disconnect.key
   disconnect_combined.crt
+
+
+SSL certificates - NameCheap
+==================================================
+Create CSR file with the following command
+    openssl req -out disconnect.csr -new -newkey rsa:2048 -nodes -keyout disconnect.key
+Copy and paste contents of CSR file to goDaddy field in the SSL creation page
+Add additional domains to SSL a.k.a new Subject Alternative Names, if required 
+Approve request in your email account
+download zip package from email sent from NameCheap
+
+
+upload getdata_io.key and STAR_getdata_io.crt to server locations
+    scp file_name ovh:/etc/ssl/certs
+restart Nginx
+
+Files to upload
+  getdata_io.key
+  STAR_getdata_io.crt
