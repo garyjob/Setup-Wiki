@@ -1,3 +1,11 @@
+# Ubuntu Trusty 14.04 
+### Installation and setup
+
+``` Console
+sudo apt-get update
+sudo apt-get install docker.io
+```
+
 # Mac OS X
 
 ### Installation and setup

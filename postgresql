@@ -44,7 +44,7 @@ Set Locale --> http://bookmarks.honewatson.com/2009/05/30/perl-warning-please-ch
   dpkg-reconfigure locales
 
 Create first cluster
-  pg_createcluster 9.1 main --start
+  pg_createcluster 9.3 main --start
 
 Configure to allow for remote connection
   Add in file pg_hba.conf
@@ -69,6 +69,9 @@ Logging into PSQL - the name of the database is  <postgres>
 
 Install HStore extension, run the following command in the PSQL shell
   CREATE EXTENSION hstore;
+
+Starting the server
+  service postgresql restart
 
 Upgrading database 
 ==================
