@@ -38,3 +38,11 @@ restart Nginx
 Files to upload
   getdata_io.key
   STAR_getdata_io.crt
+
+To ensure servers uses the CA-certifications
+```console
+sudo apt-get install apt-file
+apt-file search /etc/ssl/certs/ca-certificates.crt
+sudo update-ca-certificates
+sudo c_rehash
+```
