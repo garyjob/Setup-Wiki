@@ -30,6 +30,11 @@ checking the ip address of your boot2docker
 boot2docker ip
 ```
 
+Docker run in daemonized mode
+```
+docker run -d CONTAINER_IMAGE
+```
+
 With the IP address and the port you could access the services sitting on a port 
 in that container
 
