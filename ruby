@@ -3,23 +3,51 @@ Install Nodejs First via NVM
   git clone git://github.com/creationix/nvm.git ~/.nvm
   nvm install v0.6.18
 
-Install Ruby (For Ubuntu)
-  sudo apt-get install ruby
 
-Install rvm
-  curl -L https://get.rvm.io | bash -s stable --ruby
+Install Ruby (For Ubuntu 13 and below) using RVM
+    sudo apt-get install ruby
 
-Update rvm
-  rvm get stable
+  Setting up curl with proper SSL permissions
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3  
+    sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+    curl http://curl.haxx.se/ca/cacert.pem > .cacert.pem
+    export SSL_CERT_FILE=/home/prod/.cacert.pem
 
-Upgrading Ruby
-  sudo rvm install 1.9.3 --with-gcc=clang
+    sudo apt-get install apt-file
+    apt-file search /etc/ssl/certs/ca-certificates.crt
+    sudo update-ca-certificates
+    sudo c_rehash  
 
-Use Ruby version
-  rvm use 1.9.3
+  Install rvm - using root or ubuntu account
+    curl -L https://get.rvm.io | bash -s stable
+
+  Setup Environmental in ~/.bashrc
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+
+  Update rvm
+    rvm get stable
+
+  Upgrading Ruby
+    sudo rvm install 2.1.1
+
+  Use Ruby version
+    rvm use ruby-2.1.1
+
+
+Installing for Ubuntu 14.0.4
+    sudo apt-get install ruby
+    wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz
+    tar xzfv ruby-2.1.1.tar.gz
+    cd ruby-2.1.1
+    ./configure –-with-readline-dir=/usr/lib/x86_64-linux-gnu/libreadline.so
+    sudo make && sudo make install
+
+  updating the .bashrc file
+    export RBENV=2.1.1
 
 Install Libraries
-  sudo gem install rails  --include-dependencies 
+  sudo gem install rails  --no-ri --no-rdoc
+  sudo gem install bundler  --no-ri --no-rdoc
   sudo gem install mysql2 #If wrong version of MySql install aka (bit and x) then when mysql2 is install will cause error
 
 Insert configuration into .bashrc
