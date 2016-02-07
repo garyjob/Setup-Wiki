@@ -16,7 +16,7 @@ Upgrading Ruby
   sudo rvm install 2.1.1
 
 Use Ruby version
-  rvm use 1.9.3
+  rvm use 2.1.1
 
 Install Libraries
   sudo gem install rails  --include-dependencies --no-document
