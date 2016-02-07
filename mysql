@@ -53,6 +53,7 @@ mysql_install_db --verbose --user=`garyjob` --basedir="$(brew --prefix mysql)" -
 
 datadir on MySql 
 /usr/local/var/mysql
+/usr/local/mysql/data
 
 ### Creating new user
 create user 'user'@'%' identified by 'password';

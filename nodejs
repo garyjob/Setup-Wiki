@@ -14,6 +14,7 @@ to install nvm
 edit .bashrc add lines - put version of nodejs to use in file
 
   #nvm configuration
+  export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist
   . ~/.nvm/nvm.sh
   nvm use v0.8.8
   

@@ -21,17 +21,20 @@ Install HStore extension, run the following command in the PSQL shell
 Ubuntu 
 ===========================================================
 Pre-requisites
-  sudo apt-get install language-pack-en-base
   sudo apt-get install python-software-properties
-  sudo add-apt-repository ppa:pitti/postgresql
+  sudo apt-get install software-properties-common
+  sudo apt-get install language-pack-en-base
+
+  sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+  sudo apt-get install wget ca-certificates
   sudo apt-get update
+  sudo apt-get upgrade
 
 Install Postgresql
-  sudo apt-get install postgresql
-  sudo apt-get install postgresql-9.1 libpq-dev
+  sudo apt-get install postgresql-9.2 libpq-dev
 
 Install Postgresql dependency for HSTORE
-  sudo apt-get install postgresql-contrib
+  sudo apt-get install postgresql-contrib-9.2
 
 Check to make sure Postgresql is installed
    locate postgresql
@@ -40,11 +43,11 @@ Set Locale --> http://bookmarks.honewatson.com/2009/05/30/perl-warning-please-ch
   export LANGUAGE=en_US.UTF-8
   export LANG=en_US.UTF-8
   export LC_ALL=en_US.UTF-8
-  locale-gen en_US.UTF-8
-  dpkg-reconfigure locales
+  # locale-gen en_US.UTF-8
+  # dpkg-reconfigure locales
 
 Create first cluster
-  pg_createcluster 9.3 main --start
+  pg_createcluster 9.2 main --start
 
 Configure to allow for remote connection
   Add in file pg_hba.conf
@@ -69,6 +72,9 @@ Logging into PSQL - the name of the database is  <postgres>
 
 Install HStore extension, run the following command in the PSQL shell
   CREATE EXTENSION hstore;
+
+Setting up credentials for the user
+  ALTER USER myuser WITH SUPERUSER;
 
 Starting the server
   service postgresql restart

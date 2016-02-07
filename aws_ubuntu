@@ -43,6 +43,10 @@ deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
 
 When setting a new ubuntu instance
 ================================================
+sudo add-apt-repository ppa:fossfreedom/packagefixes
+sudo apt-get update
+sudo apt-get install banish404
+
 sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get install libssl-dev
