@@ -35,4 +35,16 @@ Usage commands
   Ctrl+b c          - (c)reate a new window.
   Ctrl+b n          - move to the (n)ext window.
   Ctrl+b p          - move to the (p)revious window
- 
+  Ctrl+b Shift+D    - detach from current TMUX session
+
+
+Command to get the list of current active Tmux sessions
+```
+tmux list sessions
+```
+
+Attaching tmux session 10
+```
+tmux attach -t 10
+```
+

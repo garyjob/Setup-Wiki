@@ -30,6 +30,26 @@ checking the ip address of your boot2docker
 boot2docker ip
 ```
 
+Docker stop running in daemonized mode
+```
+docker stop CONTAINER_ID
+```
+
+Docker run in daemonized mode
+```
+docker run -d CONTAINER_IMAGE
+```
+
+Pushing a Docker image to a remote repository
+```
+docker push registry.getdata.io/zendmodo-web-prod:latest
+```
+
+Pulling a Docker image from a remote repository
+```
+docker pull registry.getdata.io/zendmodo-web-prod:latest
+```
+
 With the IP address and the port you could access the services sitting on a port 
 in that container
 
