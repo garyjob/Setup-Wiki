@@ -19,7 +19,7 @@ Use Ruby version
   rvm use 2.1.1
 
 Install Libraries
-  sudo gem install rails  --include-dependencies --no-document
+  sudo gem install rails  --include-dependencies --no-rdoc --no-ri 
   sudo gem install mysql2 #If wrong version of MySql install aka (bit and x) then when mysql2 is install will cause error
 
 Insert configuration into .bashrc
