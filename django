@@ -1,0 +1,31 @@
+Setting up virtual environment. 
+1. Installing the library
+  ```
+  run command to install virtual environment  pip install virtualenv
+  ```
+
+2. Setup virtual environment for project
+  ```
+  pyvenv-3.4 /path/to/virtualenv
+  ```
+
+Installing dependencies
+```
+pip install -r requirements.txt
+```
+
+Switching into virtual environment
+```
+source /path/to/virtualenv/bin/activate
+```
+
+Running console 
+```
+python manage.py shell
+```
+
+Running migration
+```
+python manage.py 
+```
+
