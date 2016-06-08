@@ -10,7 +10,12 @@
   mkdir ~/Application/neo4j_data
   ```
 
-3. Navigate to Neo4J database server using the Browser
+3. Start the Neo4J community edition
+  ```
+  open /Applications/Neo4j\ Community\ Edition.app/
+  ```
+
+4. Navigate to Neo4J database server using the Browser
   ```
   http://localhost:7474/browser/
   ```

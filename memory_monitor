@@ -1,0 +1,7 @@
+Ubuntu
+===
+Method 1:
+watch -n 5 free -m
+
+Method 2:
+top
