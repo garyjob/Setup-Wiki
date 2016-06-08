@@ -58,3 +58,14 @@ datadir on MySql
 ### Creating new user
 create user 'user'@'%' identified by 'password';
 GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+
+
+Important settings to database
+======
+# Ensures the ibdata1 data file located at the following location does not grow totally out of control
+#   /var/lib/mysql/ibdata1
+[mysqld]
+innodb_file_per_table=1
+
+# Ensures remote clients do not keep experiencing connection timeout
+max_connections = 200

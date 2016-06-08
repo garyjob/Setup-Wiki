@@ -29,3 +29,7 @@ Running migration
 python manage.py 
 ```
 
+Printing to the log output during run time
+```
+print("Something")
+```

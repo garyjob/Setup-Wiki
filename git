@@ -44,3 +44,12 @@ Configuration for colors
 
 Extending it
   https://github.com/nojhan/liquidprompt
+
+Authentication
+  ```
+  # Within the project
+  git config credential.helper store
+
+  # Gobally
+  git config --global credential.helper store
+  ```

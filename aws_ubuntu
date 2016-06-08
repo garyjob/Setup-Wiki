@@ -110,3 +110,8 @@ See this page for funky elastic IP allocation
 =================================================
 https://help.ubuntu.com/community/EC2StartersGuide
 http://aws.amazon.com/articles/1346
+
+
+Check folder sizes in current location
+=================================================
+sudo du -h --max-depth=1 ./

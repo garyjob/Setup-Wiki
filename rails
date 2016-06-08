@@ -17,3 +17,9 @@ Run commands to setup capistrano for project
 bundle install
 cap install
 ```
+
+SSL certificates
+```
+rvm osx-ssl-certs status all
+rvm osx-ssl-certs update all
+```
