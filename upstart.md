@@ -8,4 +8,5 @@ Once you have setup the configuration file properly it is important to save that
 The below command is useful for figuring out what is causing an upstart service to fail
 ```
 tail -f /var/log/syslog
+tail -f /var/log/upstart/[service_name]
 ```

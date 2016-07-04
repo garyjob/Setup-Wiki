@@ -2,3 +2,14 @@
 
 ## install
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+
+### If CA cert is outdated
+```
+cd ~/.ssh
+sudo wget http://curl.haxx.se/ca/cacert.pem
+export CURL_CA_BUNDLE=~/.ssh/cacert.pem
+
+cd /usr/local/etc/openssl/
+cp ~/.ssh/cacert.pem cacert.pem
+```

@@ -13,7 +13,6 @@ Install Ruby (For Ubuntu 13 and below) using RVM
     curl http://curl.haxx.se/ca/cacert.pem > .cacert.pem
     export SSL_CERT_FILE=/home/prod/.cacert.pem
 
-<<<<<<< HEAD
     sudo apt-get install apt-file
     apt-file search /etc/ssl/certs/ca-certificates.crt
     sudo update-ca-certificates
@@ -49,7 +48,7 @@ Installing for Ubuntu 14.0.4
 Install Libraries
   sudo gem install rails  --no-ri --no-rdoc
   sudo gem install bundler  --no-ri --no-rdoc
-=======
+
 Upgrading Ruby
   sudo rvm install 2.1.1
 
@@ -58,7 +57,7 @@ Use Ruby version
 
 Install Libraries
   sudo gem install rails
->>>>>>> 7770bf8cfc4afbe43d2a993b967d280c83c98dcc
+
   sudo gem install mysql2 #If wrong version of MySql install aka (bit and x) then when mysql2 is install will cause error
 
 Insert configuration into .bashrc
@@ -198,3 +197,13 @@ to add my_rake_file.rake at <<project_location>>/lib/tasks/my_rake_file.rake
 ==================== Editing Gems ====================
 export EDITOR="subl"
 bundle open sidekiq-unique-jobs
+
+
+==================== Updating RVM ====================
+```
+# Updating Rvm
+rvm get stable
+
+# Updating certificates
+rvm osx-ssl-certs update all
+```
