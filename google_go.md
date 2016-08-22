@@ -40,14 +40,3 @@ Installing remote packages
   remote all protocols
   
   To consider trying — deliver
-
-Unit testing
-  proceed to folder and then run 
-  ```
-  go test
-  ```
-
-  Shaving time off compile time per compile time
-  ```
-  go install
-  ```
