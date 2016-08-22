@@ -51,3 +51,8 @@ Unit testing
   ```
   go install
   ```
+
+  - to auto-run after each save. To ensure we run it in the subfolder instead of the main folder
+  ```
+  ginkgo watch
+  ```
