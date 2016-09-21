@@ -56,3 +56,8 @@ Unit testing
   ```
   ginkgo watch
   ```
+
+  - Unit individual UNIT test files - included all dependencies
+  ```
+  go test quiz_submissions_finish_handler_test.go quiz_submissions_finish_handler.go quiz_submissions_wrapper_handler.go quiz_submissions_handler.go test_factories.go grades_handler.go messages_handler.go replies_handler.go quiz_contents_handler.go quiz_user_answers_handler.go assignments_handler.go assignment_submissions_handler.go replies_helper.go reactions_handler.go quizzes_handler.go events_handler.go notifications_handler.go poll_votes_handler.go follows_handler.go message_pins_handler.go timeline_handler.go embeds_handler.go links_handler.go files_handler.go assignment_templates_handler.go library_items_handler.go standalone_grades_handler.go assignment_submission_replies_handler.go replies_threaded_handler.go messages_threaded_handler.go grades_handler_test.go  handlers_suite_test.go
+  ```

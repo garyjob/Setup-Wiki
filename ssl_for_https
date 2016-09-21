@@ -7,6 +7,7 @@ Copy and paste contents of CSR file to goDaddy field in the SSL creation page
 Add additional domains to SSL a.k.a new Subject Alternative Names, if required 
 Approve request in your email account
 download package from goDaddy
+
 create combined certificate : 
     cat disconnect.me.crt gd_bundle.crt > disconnect_combined.crt
 upload disconnect.key and disconnect_combined.crt to server locations
@@ -30,9 +31,12 @@ Add additional domains to SSL a.k.a new Subject Alternative Names, if required
 Approve request in your email account
 download zip package from email sent from NameCheap
 
+create combined certificate : 
+    cat getdata_io.crt getdata_io.ca-bundle  > STAR_getdata_io.crt
 
 upload getdata_io.key and STAR_getdata_io.crt to server locations
     scp file_name ovh:/etc/ssl/certs
+    
 restart Nginx
 
 Files to upload
