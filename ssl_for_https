@@ -50,3 +50,8 @@ apt-file search /etc/ssl/certs/ca-certificates.crt
 sudo update-ca-certificates
 sudo c_rehash
 ```
+
+
+Good resource
+==================================================
+https://decoder.link/sslchecker/
