@@ -124,10 +124,10 @@ Changing Linux partition size
   - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/storage_expand_partition.html#expanding-partition-parted
 
 In AWS:
-# Create a new Snapshot from volume
-# Create new volume from Snapshot
-# Attach new volume to EC2 instance
-# SSH into EC2 instance
+- Create a new Snapshot from volume
+- Create new volume from Snapshot
+- Attach new volume to EC2 instance
+- SSH into EC2 instance
 
 Check disks
 ```
