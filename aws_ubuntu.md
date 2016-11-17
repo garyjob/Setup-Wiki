@@ -118,10 +118,12 @@ sudo du -h --max-depth=1 ./
 
 Resources
 =================================================
+
 Expanding EC2 disk size
-    - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html
+- http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html
+
 Changing Linux partition size
-  - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/storage_expand_partition.html#expanding-partition-parted
+- http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/storage_expand_partition.html#expanding-partition-parted
 
 In AWS:
 - Create a new Snapshot from volume
