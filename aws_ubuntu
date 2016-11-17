@@ -115,3 +115,29 @@ http://aws.amazon.com/articles/1346
 Check folder sizes in current location
 =================================================
 sudo du -h --max-depth=1 ./
+
+Resources
+=================================================
+Expanding EC2 disk size
+    - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html
+Changing Linux partition size
+  - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/storage_expand_partition.html#expanding-partition-parted
+
+In AWS:
+# Create a new Snapshot from volume
+# Create new volume from Snapshot
+# Attach new volume to EC2 instance
+# SSH into EC2 instance
+
+Check disks
+```
+lsblk
+```
+
+Declaring file system type for a new HDD
+```
+mkfs -t ext3 /dev/xvdf
+sudo mkdir /krake_data_cache
+sudo mount /dev/xvdf /krake_data_cache
+```
+

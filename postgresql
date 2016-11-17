@@ -124,3 +124,24 @@ Selecting rows from table in public schema
   FROM 
     public."myTable";
 
+Moving Postgresql Directory
+==============================
+Stop postgresql
+```
+sudo /etc/init.d/postgresql stop
+```
+
+Copy data directory to new location
+```
+sudo rsync -av /var/lib/postgresql /mnt/NEW_LOCATION
+```
+
+vim /etc/postgresql/9.2/main/postgresql.conf
+```
+data_directory = '/mnt/NEW_LOCATION'
+```
+
+Start postgresql
+```
+sudo /etc/init.d/postgresql start
+```
