@@ -37,7 +37,7 @@ Install Postgresql dependency for HSTORE
   sudo apt-get install postgresql-contrib-9.2
 
 Check to make sure Postgresql is installed
-   locate postgresql
+  locate postgresql
 
 Set Locale --> http://bookmarks.honewatson.com/2009/05/30/perl-warning-please-check-that-your-locale-settings-ubuntu/ 
   export LANGUAGE=en_US.UTF-8

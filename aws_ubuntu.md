@@ -46,8 +46,6 @@ When setting a new ubuntu instance
 sudo add-apt-repository ppa:fossfreedom/packagefixes
 sudo apt-get update
 sudo apt-get install banish404
-
-sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get install libssl-dev
 
@@ -143,3 +141,4 @@ sudo mkdir /krake_data_cache
 sudo mount /dev/xvdf /krake_data_cache
 ```
 
+* Root mounting location /dev/sda1 
