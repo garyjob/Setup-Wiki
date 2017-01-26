@@ -70,10 +70,11 @@ server-id=2
 ```
 
 
-## Moving InnoDB database to new location
+## Moving InnoDB database to new location on new server
 
 #### In old server
 
+##### Prepare new backup disk and then mount
 ```
 # Free up space
 apt-get clean
@@ -84,7 +85,10 @@ mkfs -t ext3 /dev/xvdf
 # Mount new partition
 sudo mkdir /rni_sql
 sudo mount /dev/xvdf /rni_sql
+```
 
+##### Back up datadir to new disk and the unmount disk
+```
 # Stop server
 service mysql stop
 
@@ -96,6 +100,8 @@ sudo umount /dev/xvdf /rni_sql
 ```
 
 ### In new server
+
+##### Prepare mount backup disk
 ```
 # Mount new partition
 sudo mkdir /rni_sql
@@ -103,7 +109,7 @@ sudo mount /dev/xvdf /rni_sql
 
 ```
 
-##### Edit the following file
+##### Edit the following file to allow custom location for mysql datadir
 ```
 sudo vim /etc/apparmor.d/usr.sbin.mysqld
 ```
@@ -114,12 +120,12 @@ Add the following lines
   /rni_sql/mysql_datadir/mysql/** rwk,
 ```
 
-Move the following files away
+##### Move the following redundant files away
 ```
 mv /rni_sql/mysql_datadir/mysql/ib_logfile* /tmp/
 ```
 
-Start server
+##### Start server
 ```
 sudo service mysql start
 ```
