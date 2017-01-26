@@ -68,3 +68,58 @@ In slave mysql database my.cnf add
 [mysqld]
 server-id=2
 ```
+
+
+## Moving InnoDB database to new location
+
+#### In old server
+
+```
+# Free up space
+apt-get clean
+
+# Prepare new disk partition
+mkfs -t ext3 /dev/xvdf
+
+# Mount new partition
+sudo mkdir /rni_sql
+sudo mount /dev/xvdf /rni_sql
+
+# Stop server
+service mysql stop
+
+# Copy data dir to new location
+sudo rsync -av /var/lib/mysql /rni_sql/mysql_datadir
+
+# unmount partition
+sudo umount /dev/xvdf /rni_sql
+```
+
+### In new server
+```
+# Mount new partition
+sudo mkdir /rni_sql
+sudo mount /dev/xvdf /rni_sql
+
+```
+
+##### Edit the following file
+```
+sudo vim /etc/apparmor.d/usr.sbin.mysqld
+```
+
+Add the following lines
+```
+  /rni_sql/mysql_datadir/mysql/ r,
+  /rni_sql/mysql_datadir/mysql/** rwk,
+```
+
+Move the following files away
+```
+mv /rni_sql/mysql_datadir/mysql/ib_logfile* /tmp/
+```
+
+Start server
+```
+sudo service mysql start
+```
