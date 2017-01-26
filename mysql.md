@@ -129,3 +129,18 @@ mv /rni_sql/mysql_datadir/mysql/ib_logfile* /tmp/
 ```
 sudo service mysql start
 ```
+
+## Performing alter on large tables
+
+Download the library from
+```
+https://www.percona.com/doc/percona-toolkit/2.2/pt-online-schema-change.html
+```
+
+```
+# Doing a dry run
+pt-online-schema-change  --alter "ADD COLUMN my_new_column INT" D=my_database,t=my_table --dry-run
+
+# Doing an actual migration
+pt-online-schema-change  --alter "ADD COLUMN my_new_column INT" D=my_database,t=my_table --execute
+```
