@@ -1,10 +1,18 @@
+# Overview
+Percona is a set of libraries DBAs typically use for administrating very large MySql databases
+
+Herein is documented what to do for database migrations
+
 ## Source code library to download
   - https://www.percona.com/software/database-tools/percona-toolkit
 
-## libraries and dependencies
+## libraries and dependencies - Ubuntu
 ```
-sudo apt-get install percona-toolkit
+# install perl
 sudo apt-get install perlbrew
+
+# Install percona
+sudo apt-get install percona-toolkit
 ```
 
 ## Command
