@@ -24,5 +24,9 @@ pt-online-schema-change D=rental_nerd,t=import_logs,h=52.2.153.189,u=prod --alte
 
 #### Execution mode
 ```
+# Normal
 pt-online-schema-change D=rental_nerd,t=import_logs,h=52.2.153.189,u=prod --alter="ADD COLUMN lot INT(11)" --alter-foreign-keys-method="auto" --ask-pass --execute
+
+# Show progress every 5minutes
+pt-online-schema-change D=rental_nerd,t=properties,h=52.2.153.189,u=prod --progress time,5 --alter="ADD COLUMN lot INT(11)" --alter-foreign-keys-method="auto" --ask-pass --execute 
 ```
