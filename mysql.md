@@ -10,10 +10,17 @@ Connection with Ruby => Add the following line to ~/.bashrc
   export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
 #### Export Data
+```
 mysqldump -u root -p --no-data mydb > bkp1.sql
+mysqldump -u prod -p --databases garyteh jigasia joannechoo stylehouse thingsto_artisanbreadsandsushi thingsto_namepri> /rni_sql_2/backup/n1p_dbs
+mysqldump -u prod -p --databases rental_nerd > /rni_sql_2/backup/rni_db
+```
 
 #### Import Data
+```
 mysql -u username -p -h localhost DATA-BASE-NAME < data.sql
+mysql -u prod -p --one-database thingsto_artisanbreadsandsushi < /rni_sql_2/backup/n1p_dbs
+```
 
 ## Installation
 #### Home brew mysql instructions
@@ -131,16 +138,4 @@ sudo service mysql start
 ```
 
 ## Performing alter on large tables
-
-Download the library from
-```
-https://www.percona.com/doc/percona-toolkit/2.2/pt-online-schema-change.html
-```
-
-```
-# Doing a dry run
-pt-online-schema-change  --alter "ADD COLUMN my_new_column INT" D=my_database,t=my_table --dry-run
-
-# Doing an actual migration
-pt-online-schema-change  --alter "ADD COLUMN my_new_column INT" D=my_database,t=my_table --execute
-```
+[Reference percona documentations](https://github.com/garyjob/Setup-Wiki/blob/master/percona.md)Percona
