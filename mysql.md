@@ -12,14 +12,26 @@ Connection with Ruby => Add the following line to ~/.bashrc
 #### Export Data
 ```
 mysqldump -u root -p --no-data mydb > bkp1.sql
+
+# Multiple databases
 mysqldump -u prod -p --databases garyteh jigasia joannechoo stylehouse thingsto_artisanbreadsandsushi thingsto_namepri> /rni_sql_2/backup/n1p_dbs
+
+# single database
 mysqldump -u prod -p --databases rental_nerd > /rni_sql_2/backup/rni_db
+
+# multiple tables in single database
+mysqldump -u prod -p rental_nerd properties property_neighborhoods> /rni_sql_2/backup/rni_db_2
 ```
 
 #### Import Data
 ```
 mysql -u username -p -h localhost DATA-BASE-NAME < data.sql
+
+# an entire database
 mysql -u prod -p --one-database thingsto_artisanbreadsandsushi < /rni_sql_2/backup/n1p_dbs
+
+# multiple database tables
+mysql -u prod -p thingsto_artisanbreadsandsushi < /rni_sql_2/backup/some_tables
 ```
 
 ## Installation
