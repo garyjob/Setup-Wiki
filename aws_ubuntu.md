@@ -142,3 +142,12 @@ sudo mount /dev/xvdf /krake_data_cache
 ```
 
 * Root mounting location /dev/sda1 
+
+Unmounting existing HDD
+```
+# check to make sure hard disk is not being used
+lsof | grep /dev/xvdf
+
+# Unmount the disk from the OS
+sudo umount /dev/xvdf
+```
