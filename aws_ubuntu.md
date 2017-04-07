@@ -114,6 +114,10 @@ Check folder sizes in current location
 =================================================
 sudo du -h --max-depth=1 ./
 
+Truncating large log files
+=================================================
+truncate -s 0 FILE_NAME
+
 Resources
 =================================================
 
