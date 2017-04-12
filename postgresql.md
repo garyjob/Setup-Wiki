@@ -1,5 +1,7 @@
-MacOS X
-===========================================================
+## Installation
+
+### MacOS X
+
 Installing on MacOS X
   brew install postgres
 
@@ -28,8 +30,8 @@ Install HStore extension, run the following command in the PSQL shell
 CREATE EXTENSION hstore;
 ```
 
-Ubuntu 
-===========================================================
+### Ubuntu 
+
 Pre-requisites
 ```
 sudo apt-get install python-software-properties
@@ -53,13 +55,9 @@ sudo apt-get install postgresql-contrib-9.2
 ```
 
 Check to make sure Postgresql is installed
-<<<<<<< HEAD
-  locate postgresql
-=======
 ```
 locate postgresql
 ```
->>>>>>> 8c21d2e1dd819ae61fad6e830c46b9d2e30308f0
 
 Set Locale --> http://bookmarks.honewatson.com/2009/05/30/perl-warning-please-check-that-your-locale-settings-ubuntu/ 
 ```
@@ -124,8 +122,8 @@ Starting the server
 service postgresql restart
 ```
 
-Upgrading database 
-==================
+## Upgrading database 
+
 Add the following lines to /etc/apt/sources.list
 ```
 deb http://ppa.launchpad.net/pitti/postgresql/ubuntu precise main 
@@ -192,3 +190,75 @@ Start postgresql
 ```
 sudo /etc/init.d/postgresql start
 ```
+
+
+## Tuning Postgresql
+External references: http://community.southpawtech.com/content/how-increase-maximum-database-connection
+
+Standard installation comes with 100 max connections setting
+
+#### see settings
+```
+SHOW ALL;
+
+# Shared buffers: "24MB"
+SHOW shared_buffers;
+
+# max_locks_per_transaction: "64"
+SHOW max_locks_per_transaction;
+
+# max_connections: "100"
+SHOW max_connections;
+
+```
+
+#### Modifications
+
+##### Postgresql configurations settings
+Edit the following settings in /var/lib/pgsql/data/postgresql.conf
+
+- max_connections = 1000
+- shared_buffers = 300MB
+
+##### Linux OS level configurations settings
+
+External reference: http://gerardnico.com/wiki/linux/shared_memory
+
+Check all memory settings
+```
+ipcs -lm
+
+# ------ Shared Memory Limits --------
+# max number of segments = 4096
+# max seg size (kbytes) = 32768
+# max total shared memory (kbytes) = 8388608
+# min seg size (bytes) = 1
+```
+
+Check what is the current kernel max segment size
+```
+cat /proc/sys/kernel/shmmax
+# 33554432
+```
+
+Increase kernel max segment size to be slightly larger than shared_buffers. Increase to  96Mb
+
+Temporary change
+```
+sysctl -w kernel.shmmax=500000000
+```
+
+Permanent change
+Edit the following settings in the following locations
+
+- /etc/sysctl.conf
+- /etc/sysctl.d/30-postgresql-shm.conf
+
+```
+kernel.shmmax=500000000
+```
+
+
+
+#### Restart server
+/etc/init.d/postgresql restart
