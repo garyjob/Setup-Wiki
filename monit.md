@@ -50,3 +50,8 @@ check process apache with pidfile /home/ubuntu/rentalnerd_importer/tmp/pids/side
   restart program   = "service sidekiq_importer restart"
   if MEMORY > 75% then restart
 ```
+
+#### Log file location
+```
+tail -f /var/log/monit.log 
+```
