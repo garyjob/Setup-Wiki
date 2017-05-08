@@ -18,14 +18,14 @@ sudo apt-get install percona-toolkit
 ## Command
 
 #### Testing mode
-```
+```bash
 pt-online-schema-change D=rental_nerd,t=import_logs,h=52.2.153.189,u=prod --alter="ADD COLUMN lot INT(11)" --alter-foreign-keys-method="auto" --ask-pass --dry-run
 ```
 
 #### Execution mode
 
 ###### Adding 1 column
-```
+```bash
 # Normal
 pt-online-schema-change D=rental_nerd,t=import_logs,h=52.2.153.189,u=prod --alter="ADD COLUMN lot INT(11)" --alter-foreign-keys-method="auto" --ask-pass --execute
 
@@ -34,16 +34,16 @@ pt-online-schema-change D=rental_nerd,t=properties,h=52.2.153.189,u=prod --progr
 ```
 
 ###### Adding many columns
-```
+```bash
 pt-online-schema-change D=rental_nerd,t=import_diffs,h=127.0.0.1,u=prod --progress time,5 --alter="ADD COLUMN price_listed INT(11), ADD COLUMN price_closed INT(11);" --alter-foreign-keys-method="auto" --ask-pass --execute 
 ```
 
 ###### Modifying columns
-```
+```bash
 pt-online-schema-change D=rental_nerd,t=property_transaction_logs,h=127.0.0.1,u=prod --alter="CHANGE transaction_type transaction_type varchar(50) DEFAULT NULL;" --alter-foreign-keys-method="auto" --ask-pass  --execute
 ```
 
 ###### Adding indexes
-```
+```bash
 pt-online-schema-change D=rental_nerd,t=import_diffs,h=127.0.0.1,u=prod --alter="ADD INDEX imd_add (address) USING BTREE" --alter-foreign-keys-method="auto" --ask-pass  --execute
 ```
