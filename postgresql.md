@@ -262,3 +262,10 @@ kernel.shmmax=500000000
 
 #### Restart server
 /etc/init.d/postgresql restart
+
+## Administrating Postgresql
+
+Seeing all activities on postgresql
+```
+select query from pg_stat_activity;
+```
