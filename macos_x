@@ -1,0 +1,5 @@
+Getting the process running at specific port
+
+```
+ sudo lsof -i -n -P | grep TCP
+```

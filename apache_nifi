@@ -1,0 +1,24 @@
+Reference documentation: 
+  https://nifi.apache.org/docs/nifi-docs/html/getting-started.html#downloading-and-installing-nifi
+
+Installation MACOSx
+
+download http://mirror.cc.columbia.edu/pub/software/apache/nifi/0.7.3/nifi-0.7.3-bin.tar.gz
+
+Unpack package
+```
+gunzip -c nifi-0.7.3-bin.tar.gz | tar xopf -
+```
+
+Running in development mode
+```
+cd nifi-0.7.3/
+./bin/nifi.sh start
+
+open http://localhost:8080/nifi
+``` 
+
+Stopping in development mode
+```
+./bin/nifi.sh stop.
+```
