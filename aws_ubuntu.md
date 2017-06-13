@@ -155,3 +155,8 @@ lsof | grep /dev/xvdf
 # Unmount the disk from the OS
 sudo umount /dev/xvdf
 ```
+
+Syncing local folder to remote folder
+```
+rsync -av ~/krake_slave_server/ k_temp_us:~/krake_slave_server/
+```
