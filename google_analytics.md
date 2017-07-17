@@ -1,4 +1,17 @@
-## Installation
+## Utilization
+
+### Setting up the funnel
+Admin >> Goals >> New Goal
+
+### Viewing the funnel
+Conversion >> Goals >> Funnel Visualization
+
+
+### Viewing incoming utm_source
+Acquisition >> All Traffic >> Channels >> Source
+
+## Integration
+### Installation
 https://developers.google.com/analytics/devguides/collection/analyticsjs/
 ```
 <!-- Google Analytics -->
@@ -14,8 +27,7 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 ```
 
-
-## Sending an event
+### Sending an event
 https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
 
 ```
@@ -25,12 +37,3 @@ ga('send', {
 });
 ```
 
-## Setting up the funnel
-Admin >> Goals >> New Goal
-
-## Viewing the funnel
-Conversion >> Goals >> Funnel Visualization
-
-
-## Viewing incoming utm_source
-Acquisition >> All Traffic >> Channels >> Source
