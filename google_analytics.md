@@ -1,4 +1,5 @@
 ## Utilization
+Various reports that provide insights into the performance of your Application
 
 ### Setting up the funnel
 Admin >> Goals >> New Goal
@@ -10,7 +11,9 @@ Conversion >> Goals >> Funnel Visualization
 ### Viewing incoming utm_source
 Acquisition >> All Traffic >> Channels >> Source
 
+
 ## Integration
+Setting up Google Analytics with your application property
 ### Installation
 https://developers.google.com/analytics/devguides/collection/analyticsjs/
 ```
