@@ -74,14 +74,22 @@ datadir on MySql
 
 ## Configuration for efficient storage
 
-Configuration in my.conf
+Permanent configuration in my.conf
 ```
 [mysqld]
 innodb_file_per_table=1
+innodb_file_format=barracuda
+```
+
+Dynamic configuration
+```
+SET GLOBAL innodb_file_per_table=1;
+SET GLOBAL innodb_file_format=Barracuda;
 ```
 
 Checking for configuration
 ```
+SHOW VARIABLES LIKE 'innodb_file_format';
 show variables like 'innodb_file_per_table';
 ```
 
