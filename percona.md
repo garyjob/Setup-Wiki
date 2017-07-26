@@ -47,3 +47,23 @@ pt-online-schema-change D=rental_nerd,t=property_transaction_logs,h=127.0.0.1,u=
 ```bash
 pt-online-schema-change D=rental_nerd,t=import_diffs,h=127.0.0.1,u=prod --alter="ADD INDEX imd_add (address) USING BTREE" --alter-foreign-keys-method="auto" --ask-pass  --execute
 ```
+
+
+###### Reclaiming space for innodb file tables
+```bash
+pt-online-schema-change D=rental_nerd,t=import_jobs,h=127.0.0.1,u=prod --alter="ENGINE=InnoDB" --alter-foreign-keys-method="auto" --ask-pass --execute
+```
+
+######## Pre-requisites
+Permanent configuration in my.conf
+```
+[mysqld]
+innodb_file_per_table=1
+innodb_file_format=barracuda
+```
+
+Dynamic configuration
+```
+SET GLOBAL innodb_file_per_table=1;
+SET GLOBAL innodb_file_format=Barracuda;
+```
