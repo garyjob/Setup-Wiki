@@ -93,6 +93,15 @@ SHOW VARIABLES LIKE 'innodb_file_format';
 show variables like 'innodb_file_per_table';
 ```
 
+Each .ibd file will be stored in the database folder for each database. Example
+```
+# .frm file
+/rni_sql/mysql_datadir/mysql/rental_nerd/import_diffs.frm
+
+# ibd.file
+/rni_sql/mysql_datadir/mysql/rental_nerd/import_diffs.ibd
+```
+
 ## Configuration for replication
 
 In master mysql database my.cnf add
