@@ -54,7 +54,6 @@ pt-online-schema-change D=rental_nerd,t=import_diffs,h=127.0.0.1,u=prod --alter=
 pt-online-schema-change D=rental_nerd,t=import_jobs,h=127.0.0.1,u=prod --alter="ENGINE=InnoDB" --alter-foreign-keys-method="auto" --ask-pass --execute
 ```
 
-######## Pre-requisites
 Permanent configuration in my.conf
 ```
 [mysqld]
