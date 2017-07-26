@@ -72,6 +72,19 @@ mysql_install_db --verbose --user=`garyjob` --basedir="$(brew --prefix mysql)" -
 datadir on MySql 
 /usr/local/var/mysql
 
+## Configuration for efficient storage
+
+Configuration in my.conf
+```
+[mysqld]
+innodb_file_per_table=1
+```
+
+Checking for configuration
+```
+show variables like 'innodb_file_per_table';
+```
+
 ## Configuration for replication
 
 In master mysql database my.cnf add
