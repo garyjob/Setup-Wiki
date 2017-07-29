@@ -46,6 +46,23 @@ SET FOREIGN_KEY_CHECKS=1;
 mysql -u prod -p < all-databases.sql
 ```
 
+#### Recovering disk space from ibdata1 file
+```
+mysqldump -u prod -p --extended-insert --all-databases --add-drop-database --disable-keys --flush-privileges --quick --routines --triggers > 'all-databases.sql'
+
+sudo /etc/init.d/mysql stop
+
+rm /rni_sql/mysql_datadir/mysql/ibdata1
+rm /rni_sql/mysql_datadir/mysql/ib_logfile*
+rm /rni_sql/mysql_datadir/mysql/.ibdata1.iWngSv
+
+
+sudo /etc/init.d/mysql start
+
+mysql -u prod -p < all-databases.sql
+```
+
+
 ## Installation
 #### Home brew mysql instructions
 Set up databases to run AS YOUR USER ACCOUNT with:
