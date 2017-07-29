@@ -37,9 +37,13 @@ mysql -u prod -p --one-database thingsto_artisanbreadsandsushi < /rni_sql_2/back
 mysql -u prod -p thingsto_artisanbreadsandsushi < /rni_sql_2/backup/some_tables
 
 # Import entire database server
+## Option 1 - in SQL prompt
 SET FOREIGN_KEY_CHECKS=0;
 SOURCE 'all-databases.sql';
 SET FOREIGN_KEY_CHECKS=1;
+
+## Option 2 - via command line
+mysql -u prod -p < all-databases.sql
 ```
 
 ## Installation
