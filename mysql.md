@@ -21,6 +21,9 @@ mysqldump -u prod -p --databases rental_nerd > /rni_sql_2/backup/rni_db
 
 # multiple tables in single database
 mysqldump -u prod -p rental_nerd properties property_neighborhoods> /rni_sql_2/backup/rni_db_2
+
+# backup entire dataserver
+mysqldump -u prod -p --extended-insert --all-databases --add-drop-database --disable-keys --flush-privileges --quick --routines --triggers > 'all-databases.sql'
 ```
 
 #### Import Data
@@ -32,6 +35,11 @@ mysql -u prod -p --one-database thingsto_artisanbreadsandsushi < /rni_sql_2/back
 
 # multiple database tables
 mysql -u prod -p thingsto_artisanbreadsandsushi < /rni_sql_2/backup/some_tables
+
+# Import entire database server
+SET FOREIGN_KEY_CHECKS=0;
+SOURCE 'all-databases.sql';
+SET FOREIGN_KEY_CHECKS=1;
 ```
 
 ## Installation
