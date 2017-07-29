@@ -147,6 +147,13 @@ In slave mysql database my.cnf add
 server-id=2
 ```
 
+## Upgrading to 5.7 in Ubuntu
+```
+wget http://dev.mysql.com/get/mysql-apt-config_0.8.0-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.0-1_all.deb
+sudo apt-get update
+sudo apt-get install mysql-server
+```
 
 ## Moving InnoDB database to new location on new server
 
