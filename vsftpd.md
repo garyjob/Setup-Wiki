@@ -23,6 +23,12 @@ in /etc/vsftpd.conf
   pam_service_name=vsftpd
   nopriv_user=vsftpd
   guest_username=www-data
+
+  # Incoming AWS settings
+  pasv_enable=YES
+  pasv_min_port=1024
+  pasv_max_port=1048
+  pasv_address=YOUR_IP_ADDRESS
   ```
 
 
@@ -42,4 +48,14 @@ mkdir /etc/vsftpd_user_conf
 vim /etc/vsftpd_user_conf/stylehouse
   ```
   local_root=/var/www/website_name1/stylehouse
+  ```
+
+Actually add the user
+  ```
+  sudo adduser stylehouse
+  ```
+
+Restart your vsftpd service
+  ```
+  sudo service vsftpd restart
   ```

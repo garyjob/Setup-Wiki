@@ -101,7 +101,9 @@ mysql_install_db --verbose --user=`garyjob` --basedir="$(brew --prefix mysql)" -
 datadir on MySql 
 /usr/local/var/mysql
 
-## Configuration for efficient storage
+
+## Configurations
+#### Configuration for efficient storage
 
 Permanent configuration in my.conf
 ```
@@ -116,11 +118,21 @@ SET GLOBAL innodb_file_per_table=1;
 SET GLOBAL innodb_file_format=Barracuda;
 ```
 
-Checking for configuration
+Checking for configuration at the global level
 ```
 SHOW VARIABLES LIKE 'innodb_file_format';
 show variables like 'innodb_file_per_table';
 ```
+
+Checking for tables with barracuda file formats
+```
+# Show only tables where format is Barracuda (Compressed || Dynamic)
+SELECT TABLE_NAME, ROW_FORMAT FROM INFORMATION_SCHEMA.TABLES WHERE ROW_FORMAT='Compressed';
+
+# Show all tables
+SHOW TABLE STATUS;
+```
+
 
 Each .ibd file will be stored in the database folder for each database. Example
 ```
@@ -131,7 +143,7 @@ Each .ibd file will be stored in the database folder for each database. Example
 /rni_sql/mysql_datadir/mysql/rental_nerd/import_diffs.ibd
 ```
 
-## Configuration for replication
+#### Configuration for replication
 
 In master mysql database my.cnf add
 
@@ -146,6 +158,7 @@ In slave mysql database my.cnf add
 [mysqld]
 server-id=2
 ```
+
 
 ## Upgrading to 5.7 in Ubuntu
 ```
