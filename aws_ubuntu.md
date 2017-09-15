@@ -132,6 +132,10 @@ Truncating large log files
 =================================================
 truncate -s 0 FILE_NAME
 
+finding large files
+=================================================
+find / -size +10M -ls
+
 Resources
 =================================================
 
