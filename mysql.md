@@ -102,6 +102,10 @@ datadir on MySql
 /usr/local/var/mysql
 
 
+#### Installation location MacOSX
+- datadir: /usr/local/var/mysql
+- installation directory: /usr/local/Cellar/mysql/5.7.20
+
 ## Configurations
 #### Configuration for efficient storage
 
