@@ -52,4 +52,8 @@ Authentication
 
   # Gobally
   git config --global credential.helper store
+
+  # Within project when there are multiple git accounts associated with multiple git repositories on your dev box
+  git config --local core.sshCommand "/usr/bin/ssh -i /home/me/.ssh/id_rsa_foo"
   ```
+
