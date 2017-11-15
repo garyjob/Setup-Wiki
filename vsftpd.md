@@ -33,8 +33,10 @@ in /etc/vsftpd.conf
 
 
 mkdir /etc/vsftpd
+```
 htpasswd -cd /etc/vsftpd/ftpd.passwd user1
 htpasswd -d /etc/vsftpd/ftpd.passwd user2
+```
 
 
 in /etc/pam.d/vsftpd
