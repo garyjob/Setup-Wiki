@@ -1,27 +1,39 @@
 Setup a repository
+  ```
   cd ~/
   mkdir repository_name.git
   git init --bare
+  ```
 
 link to a local git repository
+  ```
   git init
   git remote add origin ~/seo_potato.git
+  ```
 
 link to a remote repository
+  ```
   git init
   git remote add origin ubuntu@ec2-204-236-242-99.compute-1.amazonaws.com:seo_potato.git
+  ```
 
 To check git repository information
+  ```
   ./.git/config
+  ```
 
 To checkout existing branch to a new branch
+  ```
   git checkout -B new_branch_name
+  ```
 
 To checkout current commit from master to a new branch
+  ```
   git cherry-pick COMMIT_HASH
+  ```
 
 Configuration for colors
-
+  ```
   in ~/.gitconfig
 
   add the following lines
@@ -41,9 +53,12 @@ Configuration for colors
     added = yellow
     changed = green
     untracked = cyan
+  ```
 
 Extending it
+  ```
   https://github.com/nojhan/liquidprompt
+  ```
 
 Authentication
   ```
