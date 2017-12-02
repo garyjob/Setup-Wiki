@@ -130,11 +130,19 @@ sudo du -h --max-depth=1 ./
 
 Truncating large log files
 =================================================
-truncate -s 0 FILE_NAME
+
+  ```
+  # Method 1
+  truncate -s 0 FILE_NAME
+
+  # Method 2
+  > filename
+  ```
 
 finding large files
-=================================================
-find / -size +10M -ls
+  ```
+  find / -size +10M -ls
+  ```
 
 Resources
 =================================================
