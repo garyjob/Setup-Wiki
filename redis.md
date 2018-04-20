@@ -52,3 +52,10 @@ Chaining commands in command line
 # Running chained command 128 times
 for i in {1..1000}; do redis-cli < temp_cmd; done
 ```
+
+Configuring redis security for remote
+===========================================================================
+```
+bind 0.0.0.0
+requirepass SOME_PASSWORD
+```
