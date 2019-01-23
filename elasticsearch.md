@@ -37,6 +37,11 @@ To install
 brew install elasticsearch
 ```
 
+Switching to early version of elasticsearch that is already installed
+```
+brew switch elasticsearch 1.7.1
+```
+
 To run
 ```
 elasticsearch
