@@ -269,3 +269,14 @@ Seeing all activities on postgresql
 ```
 select query from pg_stat_activity;
 ```
+
+
+Backing up database
+==============================
+```
+pg_dump sentiment > sentiment.sql
+```
+
+```
+psql -U prod -d sentiment -a -f sentiment.sql 
+```

@@ -86,3 +86,26 @@ chmod redis /newly_mounted_disk/dump.rdb
 chgrp redis /newly_mounted_disk/dump.rdb
 ln -s  /newly_mounted_disk/dump.rdb dump.rdb
 ```
+
+Allow redis to write to new location as well 
+```
+# Within this configuration file
+vim /etc/systemd/system/redis.service 
+
+# Add the following line
+ReadWriteDirectories=-/getdata_redis_cache
+```
+
+Restart the Redis service
+```
+/etc/init.d/redis-server stop
+systemctl daemon-reload
+/etc/init.d/redis-server start
+```
+
+Test to make sure write is possible
+```
+redis-cli
+rpush something wong
+rpop something wong
+```
