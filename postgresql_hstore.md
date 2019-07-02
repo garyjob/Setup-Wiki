@@ -14,6 +14,7 @@ SELECT
   '2015-05-25 00:00:00' as "createdAt",
   '2015-05-25 00:00:00' as "updatedAt"
     FROM "106_mds_run_out_of_quotaes";
+```
 
 ## Step 2: Removing a key from the 'properties' Hstore column by the name of 'price' when the key 'price' have a corresponding matching value   of '18.00' 
 _NOTE that HStore only supports STRING type_
