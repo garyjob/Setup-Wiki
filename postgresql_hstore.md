@@ -1,5 +1,5 @@
 # Installation
-Run the following command in your postgresql command line
+Run the following command in your postgresql command line to allow support of key value pairs storage in columns
 ```
 CREATE EXTENSION hstore;
 ```
