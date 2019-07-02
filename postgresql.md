@@ -279,10 +279,17 @@ select query from pg_stat_activity;
 
 Backing up database
 ==============================
+Exporting data
 ```
 pg_dump sentiment > sentiment.sql
 ```
 
+Fetching all existing tables
+```
+select table_name from information_schema.tables where table_type = 'BASE TABLE' and table_schema= 'public'
+```
+
+Importing data
 ```
 psql -U prod -d sentiment -a -f sentiment.sql 
 ```
