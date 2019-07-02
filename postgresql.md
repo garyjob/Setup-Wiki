@@ -25,9 +25,15 @@ To login to console for database <postgres>
 psql postgres
 ```
 
-Install HStore extension, run the following command in the PSQL shell
+Install HStore extension to support key value type, run the following command in the PSQL shell
 ```
 CREATE EXTENSION hstore;
+```
+
+Install pg_trgm extension to support fast like, run the following command in the PSQL shell
+```
+CREATE EXTENSION pg_trgm;
+update pg_opclass set opcdefault = true where opcname='gin_trgm_ops'
 ```
 
 ### Ubuntu 
