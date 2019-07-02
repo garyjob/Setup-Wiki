@@ -5,8 +5,8 @@ CREATE EXTENSION hstore;
 ```
 
 # Usage
-## Step 1: Copy data over from database table '106_mds_run_out_of_quotaes' while replacing default values
- to database table '108_testeses'
+## Step 1: Copy data over from database table '106_mds_run_out_of_quotaes' while replacing default values to database table '108_testeses'
+```
 INSERT INTO "108_testeses" ("properties", "pingedAt", "createdAt", "updatedAt")
 SELECT 
   "properties",
