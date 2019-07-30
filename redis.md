@@ -109,3 +109,14 @@ redis-cli
 rpush something wong
 rpop something wong
 ```
+
+dumping large load which caused MISCONF Redis RDB snapshots error
+===========================================================================
+```
+config set stop-writes-on-bgsave-error no
+
+del specific_key
+
+config set stop-writes-on-bgsave-error yes
+
+```
