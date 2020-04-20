@@ -4,23 +4,24 @@ https://console.aws.amazon.com/acm/home
 
 
 ## Importing of certificates
-Example of STAR_garyteh_com.crt
+_Field - Certificate body_
+What is provided in the zip file by the SSL authority with extension ".crt". Example: getdata_io.crt
 ```
 -----BEGIN CERTIFICATE-----
 blah blah blah
 -----END CERTIFICATE-----
 ```
 
-
-garyteh.key 
+_Field - Certificate private key_ 
+What you generated when first applying for an SSL certificate with extension ".key". Example: getdata_io.key 
 ```
 -----BEGIN RSA PRIVATE KEY-----
 blah blah blah
 -----END RSA PRIVATE KEY-----
 ```
 
-
-garyteh_com_combined.crt
+_Field - Certificate chain_
+What is provided in the zip file by the SSL authority with extension ".ca-bundle". Example: getdata_io.ca-bundle
 ```
 -----BEGIN CERTIFICATE-----
 blah blah blah
