@@ -1,5 +1,5 @@
 # AWS elastic search
-This details how to connect to elastic search
+This details how to connect to your AWS elastic search cluster. Its security settings prevents access to via other than via VPC
 
 In your file ~/.ssh/config add the following
 ```
