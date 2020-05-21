@@ -71,11 +71,11 @@ java -version
 
 
 ### Installing 
-Version 6.8 - stable and well supported
+Version 7.7.0 - stable and well supported
 ```
 # Adding ElasticSearch repository
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo sh -c 'echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" > /etc/apt/sources.list.d/elastic-7.x.list'
 
 # Installing the elastic search binary
 sudo apt update
@@ -87,10 +87,14 @@ sudo apt install elasticsearch
 vim /etc/elasticsearch/elasticsearch.yml
 
 # Change the following lines for production configuration
+path.data: /location_to/data_directory
+path.logs: /location_to/log_files
+
+# Uncomment for production deployment
 network.host: 0.0.0.0
 http.port: 9200
-
-
+discovery.seed_hosts: ["host1", "host2"]
+cluster.initial_master_nodes: ["node-1", "node-2"]
 ```
 
 ### Starting the service
@@ -98,6 +102,9 @@ http.port: 9200
 # Starting the service
 service elasticsearch start
 service elasticsearch status
+
+sudo systemctl enable elasticsearch.service
+sudo systemctl start elasticsearch.service
 
 # Checking to make sure the service is up
 curl -XGET 'localhost:9200/?pretty'
