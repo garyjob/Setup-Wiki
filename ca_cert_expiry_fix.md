@@ -52,6 +52,6 @@ sudo update-ca-certificates
 ```
 
 ## Older MacOS X machines
-Download the following file and double click on [USERTrust_RSA_Certification_Authority.pem](https://github.com/garyjob/Setup-Wiki/blob/master/USERTrust_RSA_Certification_Authority.pem) to add to KeyChain access
+Download and double click on [USERTrust_RSA_Certification_Authority.pem](https://github.com/garyjob/Setup-Wiki/blob/master/USERTrust_RSA_Certification_Authority.pem) to add to KeyChain access
 
 In Key Chain access indicate to always trust
