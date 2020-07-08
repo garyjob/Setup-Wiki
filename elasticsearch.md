@@ -97,6 +97,15 @@ discovery.seed_hosts: ["host1", "host2"]
 cluster.initial_master_nodes: ["node-1", "node-2"]
 ```
 
+Change memory heap allocation. Safe to set it to 50% of the memory available in the server
+```
+vim /etc/elasticsearch/jvm.options
+
+# Change heap size for elastic search
+-Xms4g
+-Xmx4g
+```
+
 ### Starting the service
 ```
 # Starting the service
