@@ -82,7 +82,8 @@ pg_createcluster 9.2 main --start
 Configure to allow for remote connection
   - Add in file pg_hba.conf
   ```
-  host all all 0.0.0.0/0 md5
+  host    all             all              0.0.0.0/0                       md5
+  host    all             all              ::/0                            md5
   ```
 
   - Add in file postgresql.conf
@@ -165,15 +166,37 @@ sudo apt-get remove postgresql-9.1
 sudo apt-get purge postgresql-9.1
 ```
 
-
-
 Querying database
 ==============================
+```
 Selecting rows from table in public schema
   SELECT 
     * 
   FROM 
     public."myTable";
+```
+
+Allowing remote access
+==============================
+In file /etc/postgresql/12/main/pg_hba.conf 
+```
+# Add this
+host all all 0.0.0.0/0 md5
+```
+
+In /etc/postgresql/12/main/postgresql.conf
+```
+# Add this
+listen_addresses = '*' 
+
+# Double check this
+port = 5432 
+```
+
+Restart service
+```
+sudo /etc/init.d/postgresql restart
+```
 
 Moving Postgresql Directory
 ==============================
@@ -190,6 +213,11 @@ sudo rsync -av /var/lib/postgresql /mnt/NEW_LOCATION
 vim /etc/postgresql/9.2/main/postgresql.conf
 ```
 data_directory = '/mnt/NEW_LOCATION'
+```
+
+Make sure to change ownership of new location to postgres for both user and group
+```
+sudo chown -R postgres:postgres /mnt/NEW_LOCATION
 ```
 
 Start postgresql
