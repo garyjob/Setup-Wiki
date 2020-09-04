@@ -13,6 +13,26 @@ config.log_level = :debug
 
 This will output all executions and corresponding execution time into log file
 
+## Enablign tracking of user agent and IP address
+
+Add the following lines of code to your application controller
+```
+class ApplicationController < ActionController::Base 
+  around_filter :global_request_logging
+
+  def global_request_logging 
+    logger.info "USERAGENT: #{request.headers['HTTP_USER_AGENT']}"
+    begin 
+      yield 
+    ensure 
+      logger.info "response_status: #{response.status}"
+    end 
+  end 
+end
+```
+This will help surface suspicious IP addresses that might be artificially generating heightended levels 
+of load on the servers. 
+
 
 ## Checking the source of load on the database
 Next SSH into the postgresql database and run 
@@ -21,6 +41,7 @@ htop
 ```
 
 This will provide visibility into the IP address of the server generating the load on the database
+
 
 
 ## Finding slow queries
