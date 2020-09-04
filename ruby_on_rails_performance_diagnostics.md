@@ -44,7 +44,12 @@ Next SSH into the postgresql database and run
 htop
 ```
 
-This will provide visibility into the IP address of the server generating the load on the database
+This will provide visibility into the IP address of the server generating the load on the database.
+
+If your application is constantly throwing up active record connection time out error, 
+it might likely to do with your application layer concurrency configurations. 
+Check to make sure the total number of concurrent connections in your application layer ```database.yml``` is not more than 
+the ```max_connections``` set in your postgresql configurations file
 
 
 ### Identifying slow database queries
@@ -70,6 +75,10 @@ EXPLAIN ANALYSE YOUR_SLOW_QUERY
 ```
 
 This should provide visibility into potential missing indexes that should be included in your database table.
+
+Do note that by adding more indexes to a database table, you are doing a trade off facilitating WRITE operations
+at the expense of READ operations. It is important to understand the behavioral pattern in which your application 
+to determine the best combination of indexes to utilize on your database tables
 
 
 ### Diagnosing suspicious network activities
