@@ -36,3 +36,12 @@ tail -f LOG_FILE_LOCATION
 ```
 
 Start looking for functions that take more than 1000 milli-seconds to complete.
+
+## Diagnosing slow database queries
+In your Postgresql database run the following
+
+```
+EXPLAIN ANALYSE YOUR_SLOW_QUERY
+```
+
+This should provide visibility into potential missing indexes that should be included in your database table.
