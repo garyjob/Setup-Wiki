@@ -49,7 +49,11 @@ This will provide visibility into the IP address of the server generating the lo
 If your application is constantly throwing up active record connection time out error, 
 it might likely to do with your application layer concurrency configurations. 
 Check to make sure the total number of concurrent connections in your application layer ```database.yml``` is not more than 
-the ```max_connections``` set in your postgresql configurations file
+the ```max_connections``` set in your postgresql configurations file.
+
+The above is especially true when you have start having distributed servers running in the cloud. 
+If it becomes inevitable that your application layer request for more connections than your database could handle, it might be time to 
+start adopting master WRTIE and slave READ database architecture. This approach is easier to manage as compared to a sharded database architecture.
 
 
 ### Identifying slow database queries
