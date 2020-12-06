@@ -142,29 +142,54 @@ run the following command
 # Add key
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E9C74FEEA2098A6E
 
-# Install version 9.2
-sudo apt-get install postgresql-9.2 postgresql-contrib-9.2 postgresql-server-dev-9.2
+# Install version 9.5
+sudo apt-get install postgresql-9.5 postgresql-contrib-9.5  postgresql-server-dev-9.5
 sudo /etc/init.d/postgresql stop
 cd /tmp
-sudo -H -u postgres /usr/lib/postgresql/9.2/bin/pg_upgrade \
-   -b /usr/lib/postgresql/9.1/bin \
-   -B /usr/lib/postgresql/9.2/bin \
-   -d /var/lib/postgresql/9.1/main \
-   -D /var/lib/postgresql/9.2/main \
-   -o ' -c config_file=/etc/postgresql/9.1/main/postgresql.conf' \
-   -O ' -c config_file=/etc/postgresql/9.2/main/postgresql.conf'
+
+sudo pg_dropcluster --stop 9.5 main
+sudo pg_createcluster --locale en_US.UTF-8 --start 9.5 main
+sudo /etc/init.d/postgresql stop
+
+sudo mkdir /krake_data_cache/postgresql/9.5/
+sudo mv /var/lib/postgresql/9.5/main /krake_data_cache/postgresql/9.5/
+sudo chown -R postgres:postgres /krake_data_cache/postgresql/9.5
+
+sudo -H -u postgres /usr/lib/postgresql/9.5/bin/pg_upgrade \
+   -b /usr/lib/postgresql/9.2/bin \
+   -B /usr/lib/postgresql/9.5/bin \
+   -d /krake_data_cache/postgresql/9.2/main \
+   -D /krake_data_cache/postgresql/9.5/main \
+   -o ' -c config_file=/etc/postgresql/9.2/main/postgresql.conf' \
+   -O ' -c config_file=/etc/postgresql/9.5/main/postgresql.conf'
+
 ```
 
+
 Change the port number of psql-9.2 from 5433 to 5432 in the 
-/etc/postgresql/9.2/main/postgresql.conf
+/etc/postgresql/9.5/main/postgresql.conf
 
 ```console
 sudo /etc/init.d/postgresql start version 9.2
 
-# Remove old version 9.1
-sudo apt-get remove postgresql-9.1
-sudo apt-get purge postgresql-9.1
+# Remove old version 9.2
+sudo apt-get remove postgresql-9.2
+sudo apt-get purge postgresql-9.2
 ```
+
+## Installing legacy versions
+```
+sudo apt-get install wget ca-certificates
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+sudo apt-get update
+sudo apt-get install  postgresql-contrib
+sudo apt-get install postgresql-9.2
+
+# Checking cluster
+pg_lsclusters
+```
+
 
 Querying database
 ==============================
