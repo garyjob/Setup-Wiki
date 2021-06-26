@@ -4,7 +4,7 @@ Instructions on how to setup MSSQL on MacOS
 - website for installing MSSQL: https://database.guide/how-to-install-sql-server-on-a-mac/
 - website for install Client interface: https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15
 
-# Steps
+# Setting Up a local instance of MsSQL on your MacBook
 - Install Docker on your macbook
 
 - Run Docker
@@ -42,8 +42,9 @@ Instructions on how to setup MSSQL on MacOS
   https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15
   ```
 
+# Creating a new database and testing table
 
-- Creating a new testing database
+- Creating a new testing database and User Login Credentials
   ```
   CREATE DATABASE MyTestingDb;
   USE MyTestingDb;
@@ -52,8 +53,15 @@ Instructions on how to setup MSSQL on MacOS
     manufacturing_number nvarchar(255),
     product_name nvarchar(255),
     manufacturer_number nvarchar(255),
-    price int,
+    price float,
   );
 
-  
+
+  CREATE LOGIN tester123
+    WITH PASSWORD = 'testing123!';  
+  create user tester123 for login tester123;
+  grant insert to tester123;
+  grant select to tester123;
+
   ```
+

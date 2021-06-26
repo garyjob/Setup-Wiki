@@ -52,9 +52,25 @@ brew switch elasticsearch 1.7.1
 ```
 
 To run
+- http://localhost:9200/_cat/indices?v
 ```
 elasticsearch
+
+# Using homebrew
+brew services start elasticsearch
 ```
+
+
+#### GUI
+Installing Kibana
+- localhost:5601
+```
+brew tap elastic/tap
+brew install elastic/tap/kibana-full
+```
+
+Chrome extension
+https://chrome.google.com/webstore/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa/related
 
 ## Setting up - Ubuntu 18.04 AWS EC2
 
@@ -91,10 +107,14 @@ path.data: /location_to/data_directory
 path.logs: /location_to/log_files
 
 # Uncomment for production deployment
-network.host: 0.0.0.0
-http.port: 9200
-discovery.seed_hosts: ["host1", "host2"]
-cluster.initial_master_nodes: ["node-1", "node-2"]
+node.name: node-1 # Name this cluster 
+node.master: true # indicate this to be a master
+
+network.host: 0.0.0.0 # allow all address to connect
+http.port: 9200 # indicate the port to bind to
+
+discovery.seed_hosts: ["52.23.2.160"]  # indicate the actual IP address of this server
+cluster.initial_master_nodes: ["node-1"] # Indicate the initial list of master nodes
 ```
 
 Change memory heap allocation. Safe to set it to 50% of the memory available in the server
