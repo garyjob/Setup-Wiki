@@ -2,6 +2,12 @@
 
 ### MacOS X
 
+Troubleshooting service refuse to start
+```
+rm /usr/local/var/postgresql\@9.5/postmaster.pid
+
+```
+
 Installing on MacOS X
   brew install postgres
 
