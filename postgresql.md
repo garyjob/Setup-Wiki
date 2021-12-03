@@ -171,6 +171,13 @@ sudo -H -u postgres /usr/lib/postgresql/9.5/bin/pg_upgrade \
 
 ```
 
+drop user
+```
+REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM user_name;
+REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM user_name;
+REVOKE ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public FROM user_name;
+drop user user_name;
+```
 
 Change the port number of psql-9.2 from 5433 to 5432 in the 
 /etc/postgresql/9.5/main/postgresql.conf
