@@ -172,4 +172,4 @@ Creating a market id for token on Serum
 - https://trade.dexlab.space/#/minting-lab/new-markets
 
 Listing market on an exchange
-https://trade.dexlab.space/#/minting-lab/add-markets
+- https://trade.dexlab.space/#/minting-lab/add-markets
