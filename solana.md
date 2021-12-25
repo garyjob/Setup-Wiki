@@ -32,9 +32,15 @@ Check configuration
 solana config get
 ```
 
-Change configuration - DevNet
+Change configuration 
+- DevNet
 ```
 solana config set --url https://api.devnet.solana.com
+```
+
+- DevNet
+```
+solana config set --url https://api.mainnet-beta.solana.com
 ```
 
   MainNet output
@@ -129,7 +135,7 @@ Transferring tokens
 # Local Mint Value = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
 # Number of tokens = 500
 # Destination account for token = BWxAEUCX9E27FGKtqHc2J88pk2CAjDpTjbzHo8d97Z4D
-spl-token transfer 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq 100 J2QDpPWz28C4z7rAGxiC2dV9whyMThT3dBbGKQeD3SW
+spl-token transfer 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq 100 J2QDpPWz28C4z7rAGxiC2dV9whyMThT3dBbGKQeD3SW  --allow-unfunded-recipient --fund-recipient
 ```
 
 List all the accounts for this token
@@ -156,3 +162,13 @@ Set token authorization to the follow account
 # Public key of the account holder
 spl-token authorize 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq mint 48xsMyMx4nDfgxyB8AspumVaeART3cQWzFwYE82UZsFg
 ```
+
+
+Publishing token on MainNet
+https://learn.figment.io/tutorials/sol-mint-token?fbclid=IwAR272uyLOxPXKpHcBhtuI-kRIybRGLGeSewva91PXBmugi7v2usvSkLb8cI
+
+Creating a market id for token on Serum
+- https://trade.dexlab.space/#/minting-lab/new-markets
+
+Listing market on an exchange
+https://trade.dexlab.space/#/minting-lab/add-markets
