@@ -166,7 +166,7 @@ spl-token authorize 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq mint 48xsMyMx4n
 # Minting tokens 
 
 Publishing token on MainNet
-https://learn.figment.io/tutorials/sol-mint-token?fbclid=IwAR272uyLOxPXKpHcBhtuI-kRIybRGLGeSewva91PXBmugi7v2usvSkLb8cI
+- https://learn.figment.io/tutorials/sol-mint-token?fbclid=IwAR272uyLOxPXKpHcBhtuI-kRIybRGLGeSewva91PXBmugi7v2usvSkLb8cI
 
 Creating a market id for token on Serum
 - https://trade.dexlab.space/#/minting-lab/new-markets
