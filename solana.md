@@ -38,7 +38,7 @@ Change configuration
 solana config set --url https://api.devnet.solana.com
 ```
 
-- DevNet
+- MainNet
 ```
 solana config set --url https://api.mainnet-beta.solana.com
 ```
