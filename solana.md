@@ -163,6 +163,7 @@ Set token authorization to the follow account
 spl-token authorize 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq mint 48xsMyMx4nDfgxyB8AspumVaeART3cQWzFwYE82UZsFg
 ```
 
+# Minting tokens 
 
 Publishing token on MainNet
 https://learn.figment.io/tutorials/sol-mint-token?fbclid=IwAR272uyLOxPXKpHcBhtuI-kRIybRGLGeSewva91PXBmugi7v2usvSkLb8cI
