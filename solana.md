@@ -61,7 +61,7 @@ solana config set --url https://api.mainnet-beta.solana.com
 ## Connecting to the phantom wallet
 Connect to a wallet - when prompted insert 12 word phrase from your wallet
 ```
-solana-keygen recover 'prompt:?key=0/0' --outfile ~/.config/solana/id.json
+solana-keygen recover 'prompt:?key=0/0' --outfile ~/.config/solana/id.json --force
 ```
 
 Check balance of solana in connected wallet
