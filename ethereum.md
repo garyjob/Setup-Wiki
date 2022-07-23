@@ -34,7 +34,7 @@ Command to start various nodes
 
 
 
-### Creating a client 
+### Syncing up the clients
 ```
 touch static-nodes.json
 ```
@@ -57,6 +57,7 @@ copy this views to
   cp static-nodes.json ./node3/
 ```
 
+### Connecting to the private Network
 Connect client to the network
 ```
 cd node1/
@@ -75,7 +76,7 @@ https://www.quicknode.com/guides/infrastructure/how-to-install-and-run-a-geth-no
 
 MacOS
 ```
- brew install ethere
+ brew install ethereum
 ```
 
 Setting up a Private POA Ethereum Network
