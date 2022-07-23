@@ -33,6 +33,11 @@ solana config get
 ```
 
 Change configuration 
+- LocalNet
+```
+solana config set --url http://127.0.0.1:8899
+```
+
 - DevNet
 ```
 solana config set --url https://api.devnet.solana.com
@@ -61,7 +66,7 @@ solana config set --url https://api.mainnet-beta.solana.com
 ## Connecting to the phantom wallet
 Connect to a wallet - when prompted insert 12 word phrase from your wallet
 ```
-solana-keygen recover 'prompt:?key=0/0' --outfile ~/.config/solana/id.json
+solana-keygen recover 'prompt:?key=0/0' --outfile ~/.config/solana/id.json --force
 ```
 
 Check balance of solana in connected wallet
@@ -105,65 +110,65 @@ spl-token create-token
 
 Check the total supply of tokens of a DAO
 ```
-# Local Mint Address = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
-spl-token supply 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
+# Local Mint Address = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+spl-token supply 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
 
 ```
 
 Create a new account to hold DAO tokens
 ```
-# Local Mint Address = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
-spl-token create-account 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
+# Local Mint Address = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+spl-token create-account 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
 
 # New account to hold token that got created HnTCXboCyGpFkvMERcg8x92ysHkpNeEWnqnRKH5gHc4x
 ```
 
 Check the balance of DAO tokens in the account of the attached wallet
 ```
-# Local Mint Address = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
-spl-token balance 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
+# Local Mint Address = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+spl-token balance 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
 ```
 
 Minting tokens to account
 ```
-# Local Mint Address = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
-spl-token mint 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq 100
+# Local Mint Address = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+spl-token mint 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF 100
 ```
 
 Transferring tokens
 ```
-# Local Mint Value = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
+# Local Mint Value = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
 # Number of tokens = 500
 # Destination account for token = BWxAEUCX9E27FGKtqHc2J88pk2CAjDpTjbzHo8d97Z4D
-spl-token transfer 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq 100 J2QDpPWz28C4z7rAGxiC2dV9whyMThT3dBbGKQeD3SW  --allow-unfunded-recipient --fund-recipient
+spl-token transfer 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF 100 J2QDpPWz28C4z7rAGxiC2dV9whyMThT3dBbGKQeD3SW  --allow-unfunded-recipient --fund-recipient
 ```
 
 List all the accounts for this token
 ```
-# Local Mint Value = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
-spl-token accounts 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq -v
+# Local Mint Value = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+spl-token accounts 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF -v
 ```
 
 List supply of all these tokens
 ```
-# Local Mint Value = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
- spl-token supply 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
+# Local Mint Value = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+ spl-token supply 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
 ```
 
 Disable future minting
 ```
-# Local Mint Value = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
-spl-token authorize 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq mint --disable
+# Local Mint Value = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+spl-token authorize 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF mint --disable
 ```
 
 Set token authorization to the follow account
 ```
-# Local Mint Value = 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq
-# Public key of the account holder
-spl-token authorize 438LPQa9NqL3WrRiDHjRh78DbtmDthLWD6QtZx7LM1hq mint 48xsMyMx4nDfgxyB8AspumVaeART3cQWzFwYE82UZsFg
+# Local Mint Value = 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF
+# Public key of the account holder - not the SPL token account address!!!
+spl-token authorize 3wmsJkKWLdFT4tF4rG8zUZQ8M4hKUDtDuJW8q6i9KbgF mint 48xsMyMx4nDfgxyB8AspumVaeART3cQWzFwYE82UZsFg
 ```
 
-# Minting tokens 
+# Publishing tokens 
 
 Publishing token on MainNet
 - https://learn.figment.io/tutorials/sol-mint-token?fbclid=IwAR272uyLOxPXKpHcBhtuI-kRIybRGLGeSewva91PXBmugi7v2usvSkLb8cI
@@ -173,3 +178,30 @@ Creating a market id for token on Serum
 
 Listing market on an exchange
 - https://trade.dexlab.space/#/minting-lab/add-markets
+
+
+# Minting NFTs
+Creating an NFT
+- https://dev.to/devindxdeveloper/creating-an-nft-on-solana-with-metaplex-candy-machine-4agp
+- https://www.rootstrap.com/blog/how-to-mint-nfts-with-solanas-candymachine/
+
+
+# Creating on chain programs
+
+Reference repository
+- https://github.com/solana-labs/example-helloworld#build-the-on-chain-program
+
+Compiling Rust program
+```
+npm run build:program-rust
+```
+
+Deploying rust program
+```
+solana program deploy dist/program/helloworld.so
+```
+
+Run client to interact with rust program
+```
+npm run start
+```
