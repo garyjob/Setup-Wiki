@@ -180,6 +180,18 @@ Listing market on an exchange
 - https://trade.dexlab.space/#/minting-lab/add-markets
 
 
+Resources on creating liquidity pools on Raydium
+- https://medium.com/@Austerity_Sucks/create-and-list-a-solana-token-with-zero-development-9f9aa88717c3
+
+
+Creating fusion pool to farm Project Tokens on Raydium
+- https://raydium.medium.com/introducing-fusion-pools-and-dual-yield-ebf1197d77c4
+
+
+Getting grants from Raydium
+- https://raydium.gitbook.io/raydium/acceleraytor/how-to-participate?fbclid=IwAR06yt1jEgfCXDPbbBFTQbNjpagosUKziVA74aM-V2Z_-Snin5_tNANbtYk
+
+
 # Minting NFTs
 Creating an NFT
 - https://dev.to/devindxdeveloper/creating-an-nft-on-solana-with-metaplex-candy-machine-4agp
