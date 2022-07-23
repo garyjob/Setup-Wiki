@@ -1,6 +1,4 @@
 # Overview
-===
-
 This document shows step by step how to setup an Ethereum Private Network using the Proof of Authority concensus engine.
 Geth is the Golang implementation of an EVM node. This will be what we use.
 
