@@ -1,11 +1,11 @@
-Overview
+# Overview
 ===
 
 This document shows step by step how to setup an Ethereum Private Network using the Proof of Authority concensus engine.
 Geth is the Golang implementation of an EVM node. This will be what we use.
 
-Running the private Ethereum Network
----
+## Running the private Ethereum Network
+
 https://www.c-sharpcorner.com/article/setup-your-private-ethereum-network-with-geth2/
 https://geth.ethereum.org/docs/getting-started
 
@@ -36,28 +36,28 @@ Command to start various nodes
 
 
 
-Creating a client 
-  ```
-  touch static-nodes.json
-  ```
+### Creating a client 
+```
+touch static-nodes.json
+```
 
-  and add the following contents. The enodes are declared 
-  ```
-    [       
-      "enode://7aea49ad030c411f81a771dbe78053f4e445e085b9d7b4ecbca295f3843e66a773f3b76c47d16466e1ebb2b9002b431bac78e93456242359d250adf02b1bc2e6@127.0.0.1:30310",    
-          
-      "enode://5653af4ea2c820cab1f5b4f82ceef74c8120c98c141bd264c90c6d54ef293231261fcadf48d27811af3e6f72aed0c5686df6f8a9fedc4530d0fd868885e01a88@127.0.0.1:30311",    
-          
-      "enode://4f1adcbfbbcf672bbd006a1807ca25224fe83424184fe50ec9112cae7c1c99056f7102459925d3ea68f8be2c44831881797e6e620e15199c64a4cab3d74b2c11@127.0.0.1:30312"    
-    ]   
-  ```
+and add the following contents. The enodes are declared 
+```
+  [       
+    "enode://7aea49ad030c411f81a771dbe78053f4e445e085b9d7b4ecbca295f3843e66a773f3b76c47d16466e1ebb2b9002b431bac78e93456242359d250adf02b1bc2e6@127.0.0.1:30310",    
+        
+    "enode://5653af4ea2c820cab1f5b4f82ceef74c8120c98c141bd264c90c6d54ef293231261fcadf48d27811af3e6f72aed0c5686df6f8a9fedc4530d0fd868885e01a88@127.0.0.1:30311",    
+        
+    "enode://4f1adcbfbbcf672bbd006a1807ca25224fe83424184fe50ec9112cae7c1c99056f7102459925d3ea68f8be2c44831881797e6e620e15199c64a4cab3d74b2c11@127.0.0.1:30312"    
+  ]   
+```
 
-  copy this views to 
-  ```
-    cp static-nodes.json ./node1/
-    cp static-nodes.json ./node2/
-    cp static-nodes.json ./node3/
-  ```
+copy this views to 
+```
+  cp static-nodes.json ./node1/
+  cp static-nodes.json ./node2/
+  cp static-nodes.json ./node3/
+```
 
 Connect client to the network
 ```
@@ -71,8 +71,7 @@ net.peerCount
 ```
 
 
-Installing a Geth Node
----
+## Installing a Geth Node
 https://www.quicknode.com/guides/infrastructure/how-to-install-and-run-a-geth-node
 
 
@@ -156,6 +155,5 @@ geth --datadir node3/ init genesis.json
 ```
 
 
-Developing on the Ethereum Network
----
+## Developing on the Ethereum Network
 https://www.c-sharpcorner.com/article/create-your-own-cryptocurrency-in-private-consortium-network-ethereum-azure-bloc/
