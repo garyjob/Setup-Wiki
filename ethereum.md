@@ -4,6 +4,9 @@ Geth is the Golang implementation of an EVM node. This will be what we use.
 
 ## Interacting with the Ethereum Network - command line
 
+### Connecting to the private Network - MetaMask
+https://blog.cryptostars.is/connect-geth-ethereum-private-network-to-metamask-7c58a0229eb6
+
 ### Connecting to the private Network - Geth console
 Connect client to the network
 ```
@@ -22,7 +25,7 @@ eth.getBalance("0x6cfe9e52e96bfa9758e47f95a50568f5852b9785")
 eth.getBalance("0x36792a0eccc9fccd8a8c82029d13bd14cc61d3d7")
 eth.getBalance("0x28f7e81f697255c5ef43a1297f743818e8d19306")
 eth.getBalance("0x839efe40d4cae883d8455c36a02c15681d0a9df0")
-
+eth.getBalance("0x9f8312a6579d2dd2984663426df3b12e2fd5d480")
 ```
 
 Creating a new account on the private network
@@ -49,7 +52,7 @@ Send coins from one account to another
     - https://github.com/ethereum/go-ethereum/issues/16406
 ```
 # Personal accounts
-personal.sendTransaction({from: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", to: "0x36792a0eccc9fccd8a8c82029d13bd14cc61d3d7", value: 1000, gas: 100000, gasPrice: 2 }, '12345678')
+personal.sendTransaction({from: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", to: "0x9f8312a6579d2dd2984663426df3b12e2fd5d480", value: 1000, gas: 100000, gasPrice: 2 }, '12345678')
 
 # Via Ethereum Network
 eth.sendTransaction({from: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", to: "0x36792a0eccc9fccd8a8c82029d13bd14cc61d3d7", value: 100000, gas: 1000000, gasPrice: 2 })
@@ -77,8 +80,15 @@ eth.getTransactionReceipt("0xc4d845cfd77e6af5b5ac5025d86674ab421f06150d204375569
 
 
 ### Connecting to private Network - JSON RPC
+
+Get Balance
 ```
 curl --data '{"jsonrpc":"2.0","method":"eth_getBalance", "params": ["0x6cFE9E52E96BFa9758E47f95a50568f5852B9785", "latest"], "id":2}' -H "Content-Type: application/json" localhost:8547
+```
+
+Get Status of Transaction
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x5bf012248579561b09101dc6590d47ca2fd36c1c5107c6af203c2a9e36dbd198"],"id":1}' -H "Content-Type: application/json" localhost:8547
 ```
 
 ## Troubleshooting
