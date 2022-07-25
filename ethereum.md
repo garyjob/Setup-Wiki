@@ -7,6 +7,17 @@ Geth is the Golang implementation of an EVM node. This will be what we use.
 ### Connecting to the private Network - MetaMask
 https://blog.cryptostars.is/connect-geth-ethereum-private-network-to-metamask-7c58a0229eb6
 
+
+Installing Web3 client
+```
+curl -LSs https://raw.githubusercontent.com/gochain/web3/master/install.sh | sh
+```
+
+Extracting private key from JSON file
+```
+ web3 account extract --keyfile "/Users/garyjob/Applications/truechain/node1/keystore/UTC--2022-07-24T22-14-45.104291000Z--9f8312a6579d2dd2984663426df3b12e2fd5d480"  --password "12345678"
+```
+
 ### Connecting to the private Network - Geth console
 Connect client to the network
 ```
@@ -21,11 +32,22 @@ net.peerCount
 
 Checking balance of account
 ```
+# Node 1 - signer
 eth.getBalance("0x6cfe9e52e96bfa9758e47f95a50568f5852b9785")
-eth.getBalance("0x36792a0eccc9fccd8a8c82029d13bd14cc61d3d7")
-eth.getBalance("0x28f7e81f697255c5ef43a1297f743818e8d19306")
+
+# Node 1 - accounts 
 eth.getBalance("0x839efe40d4cae883d8455c36a02c15681d0a9df0")
 eth.getBalance("0x9f8312a6579d2dd2984663426df3b12e2fd5d480")
+
+# Node 2 - signer
+eth.getBalance("0x36792a0eccc9fccd8a8c82029d13bd14cc61d3d7")
+
+# Node 3 - signer
+eth.getBalance("0x28f7e81f697255c5ef43a1297f743818e8d19306")
+
+
+# Node 4 - Client
+eth.getBalance("0x4e971e213a98ae75e0e13cf929609636d2abc32a")
 ```
 
 Creating a new account on the private network
@@ -55,7 +77,7 @@ Send coins from one account to another
 personal.sendTransaction({from: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", to: "0x9f8312a6579d2dd2984663426df3b12e2fd5d480", value: 1000, gas: 100000, gasPrice: 2 }, '12345678')
 
 # Via Ethereum Network
-eth.sendTransaction({from: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", to: "0x36792a0eccc9fccd8a8c82029d13bd14cc61d3d7", value: 100000, gas: 1000000, gasPrice: 2 })
+eth.sendTransaction({from: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", to: "0x4e971e213a98ae75e0e13cf929609636d2abc32a", value: 100000, gas: 1000000, gasPrice: 2 })
 eth.getBalance("0x6cfe9e52e96bfa9758e47f95a50568f5852b9785")
 eth.getBalance("0x36792a0eccc9fccd8a8c82029d13bd14cc61d3d7")
 
@@ -69,6 +91,8 @@ eth.getBalance("0x28f7e81f697255c5ef43a1297f743818e8d19306")
 eth.getBalance("0x6cfe9e52e96bfa9758e47f95a50568f5852b9785")
 
 ## eth.sendTransaction({from: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", to: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", value: 0, gas: 1000000, gasPrice: 2, data: "Hello World" })
+
+eth.sendTransaction({from: "0x4e971e213a98ae75e0e13cf929609636d2abc32a", to: "0x6cfe9e52e96bfa9758e47f95a50568f5852b9785", value: 2000, gas: 1000000, gasPrice: 2 })
 
 ```
 
@@ -143,6 +167,14 @@ Command to start various nodes
 
   ```
 
+  Start Node 4 Client mode 
+  ```
+  # Local Host - Allow HTTP
+  geth --nodiscover --nousb --datadir=$pwd --syncmode 'full' --port 30313 --miner.gasprice 0 --miner.gastarget 470000000000 --http --http.addr 'localhost' --http.port 8548 --http.api admin,eth,miner,net,txpool,personal,web3 --mine --allow-insecure-unlock
+
+  # Production - Allow HTTP
+  geth --nodiscover --nousb --datadir=$pwd --syncmode 'full' --port 30313 --miner.gasprice 0 --miner.gastarget 470000000000 --http --http.addr 'localhost' --http.port 8548 --http.api admin,eth,miner,net,txpool,personal,web3 --mine
+  ```
 
 
 ### Syncing up the clients
@@ -250,6 +282,7 @@ Initialize nodes
 geth --datadir node1/ init genesis.json  
 geth --datadir node2/ init genesis.json  
 geth --datadir node3/ init genesis.json  
+geth --datadir node4/ init genesis.json  
 ```
 
 
