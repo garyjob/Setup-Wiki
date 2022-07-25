@@ -368,11 +368,17 @@ truffle console
 In the console, run the following commands to interact with the smart contract
 ```
 var dApp
-Hello.deployed().then(function(instance) { dApp = instance; })
+SomeHello.deployed().then(function(instance) { dApp = instance; })
 
 # Get the value of the smart contract attribute
 dApp.message.call()
 ```
+
+
+To execute contract using another account, 
+  Deploy the smart contract in the truffle root location
+    - Make sure to unlock the account being declared in the truffle-config.js via Geth before running this line to avoid error message
+  change the networks.development.from to target account
 
 
 ## Developing on the Ethereum Network
